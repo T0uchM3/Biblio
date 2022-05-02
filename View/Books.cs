@@ -17,9 +17,11 @@ namespace Biblio
     public partial class Books : Form
     {
         string selectedFileName;
+        Main mainRef;
 
-        public Books()
+        public Books(Main main)
         {
+            mainRef = main;
             InitializeComponent();
         }
 
@@ -53,6 +55,32 @@ namespace Biblio
             BookADO bookADO = new BookADO();
             bookADO.insert(book);
             Books_Load(sender, null);
+        }
+
+
+        private bool mouseDown;
+        private Point lastLocation;
+
+        private void MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                mainRef.Location = new Point(
+                    (mainRef.Location.X - lastLocation.X) + e.X, (mainRef.Location.Y - lastLocation.Y) + e.Y);
+
+                mainRef.Update();
+            }
+        }
+
+        private void MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

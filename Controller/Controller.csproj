@@ -45,7 +45,9 @@
     <Compile Include="BorrowADO.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="LibrarianADO.cs" />
+    <Compile Include="MemberADO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisitorADO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

@@ -12,7 +12,6 @@ namespace Model
         private int memId;
         private int bookId;
         private DateTime date;
-        private int nbrDays;
 
         public int LibId
         {
@@ -36,12 +35,6 @@ namespace Model
         {
             get => date;
             set => date = value;
-        }
-
-        public int NbrDays
-        {
-            get => nbrDays;
-            set => nbrDays = value;
         }
     }
 }

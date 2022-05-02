@@ -11,6 +11,7 @@
     <AssemblyName>Biblio</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -122,11 +122,11 @@
     <Compile Include="Books.Designer.cs">
       <DependentUpon>Books.cs</DependentUpon>
     </Compile>
-    <Compile Include="Borrow.cs">
+    <Compile Include="BorrowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Borrow.Designer.cs">
-      <DependentUpon>Borrow.cs</DependentUpon>
+    <Compile Include="BorrowForm.Designer.cs">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -139,14 +139,20 @@
     <Compile Include="RoundTf.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VisitorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitorsForm.Designer.cs">
+      <DependentUpon>VisitorsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Access.resx">
       <DependentUpon>Access.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Books.resx">
       <DependentUpon>Books.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Borrow.resx">
-      <DependentUpon>Borrow.cs</DependentUpon>
+    <EmbeddedResource Include="BorrowForm.resx">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -160,7 +166,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VisitorsForm.resx">
+      <DependentUpon>VisitorsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="BiblioDataSet.xsc">
       <DependentUpon>BiblioDataSet.xsd</DependentUpon>
@@ -206,7 +216,145 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bg" />
+    <None Include="Resources\photo-1507842217343-583bb7270b66.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_customer_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_edit_calendar_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_financial_dynamic_presentation_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_help_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_leave_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_male_user_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_male_user_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_update_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_groups_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_web_analytics_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_combo_chart_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_graph_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_combo_chart_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_book_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_new_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_book_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_book_shelf_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_remove_book_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_return_book_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogwheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_book_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_return_book_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogwheel %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_book_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_return_book_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bianca-castafiore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tchang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caraco_C0546A1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jules_C0503A2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C1754A2COLORIRMA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tintin-madame-boullu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ernestine_C0506A1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tintin-erik-bjorgenskjold.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -15,7 +15,7 @@ namespace Biblio
     {
         private Form shadow;
         private Form msg;
-
+        private int librarianId = 0;
 
         public Main()
         {
@@ -27,7 +27,7 @@ namespace Biblio
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'biblioDataSet.Book' table. You can move, or remove it, as needed.
-            this.bookTableAdapter.Fill(this.biblioDataSet.Book);
+            //this.bookTableAdapter.Fill(this.biblioDataSet.Book);
             //labelControl1.BringToFront();
             //sizer.BringToFront();
         }
@@ -119,36 +119,6 @@ namespace Biblio
         );
 
 
-        private void BookLibrary_Click(object sender, EventArgs e)
-        {
-            FormCollection fc = Application.OpenForms;
-            Boolean found = false;
-            foreach (Form frm in fc)
-            {
-                if (frm.Name == "Borrow")
-                {
-                    found = true;
-                }
-            }
-
-            if (found == true)
-            {
-                (Application.OpenForms["Borrow"] as Borrow).Close();
-                this.topLayer.Controls.Remove((Application.OpenForms["Borrow"] as Borrow));
-                //frm.Close();
-            }
-
-            Books book = new Books();
-            book.TopLevel = false;
-            book.AutoScroll = true;
-            this.topLayer.Controls.Add(book);
-            book.Dock = DockStyle.Fill;
-            book.Show();
-            sizer.BringToFront();
-            labelControl1.BringToFront();
-        }
-
-
         private void simpleButton2_Click(object sender, EventArgs e)
         {
         }
@@ -210,7 +180,7 @@ namespace Biblio
         }
 
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void borrowBtn_Click(object sender, EventArgs e)
         {
             FormCollection fc = Application.OpenForms;
             Boolean found = false;
@@ -229,14 +199,72 @@ namespace Biblio
                 //frm.Close();
             }
 
-            Borrow borrow = new Borrow();
+            BorrowForm borrow = new BorrowForm(librarianId);
             borrow.TopLevel = false;
             borrow.AutoScroll = true;
             this.topLayer.Controls.Add(borrow);
             borrow.Dock = DockStyle.Fill;
             borrow.Show();
             sizer.BringToFront();
-            labelControl1.BringToFront();
+            //labelControl1.BringToFront();
+        }
+
+        private void bookLibBtn_Click(object sender, EventArgs e)
+        {
+            FormCollection fc = Application.OpenForms;
+            Boolean found = false;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == "Borrow")
+                {
+                    found = true;
+                }
+            }
+
+            if (found == true)
+            {
+                (Application.OpenForms["Borrow"] as BorrowForm).Close();
+                this.topLayer.Controls.Remove((Application.OpenForms["Borrow"] as BorrowForm));
+                //frm.Close();
+            }
+
+            Books book = new Books(this);
+            book.TopLevel = false;
+            book.AutoScroll = true;
+            this.topLayer.Controls.Add(book);
+            book.Dock = DockStyle.Fill;
+            book.Show();
+            sizer.BringToFront();
+            //labelControl1.SendToBack();
+        }
+
+        private void visitorBtn_Click(object sender, EventArgs e)
+        {
+            FormCollection fc = Application.OpenForms;
+            Boolean foundBook = false;
+            Boolean foundBorrow = false;
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == "Borrow")
+                {
+                    foundBorrow = true;
+                }
+            }
+
+            if (foundBorrow == true)
+            {
+                (Application.OpenForms["Borrow"] as BorrowForm).Close();
+                this.topLayer.Controls.Remove((Application.OpenForms["Borrow"] as BorrowForm));
+                //frm.Close();
+            }
+
+            VisitorsForm visitor = new VisitorsForm();
+            visitor.TopLevel = false;
+            visitor.AutoScroll = true;
+            this.topLayer.Controls.Add(visitor);
+            visitor.Dock = DockStyle.Fill;
+            visitor.Show();
+            sizer.BringToFront();
         }
     }
 }

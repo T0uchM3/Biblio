@@ -111,7 +111,7 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl2.Location = new System.Drawing.Point(3, 3);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(269, 16);
+            this.labelControl2.Size = new System.Drawing.Size(268, 16);
             this.labelControl2.TabIndex = 10;
             this.labelControl2.Text = "Book Tite";
             // 
@@ -128,7 +128,7 @@
             this.roundTf1.Properties.AutoHeight = false;
             this.roundTf1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.roundTf1.Properties.NullText = "Title here...";
-            this.roundTf1.Size = new System.Drawing.Size(235, 34);
+            this.roundTf1.Size = new System.Drawing.Size(234, 34);
             this.roundTf1.TabIndex = 8;
             // 
             // gridControl1
@@ -236,7 +236,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.08861F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 147);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(274, 147);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // upBtn
@@ -247,7 +247,7 @@
             this.upBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upBtn.Location = new System.Drawing.Point(3, 97);
             this.upBtn.Name = "upBtn";
-            this.upBtn.Size = new System.Drawing.Size(269, 47);
+            this.upBtn.Size = new System.Drawing.Size(268, 47);
             this.upBtn.TabIndex = 17;
             this.upBtn.Text = "Upload Cover";
             this.upBtn.UseVisualStyleBackColor = false;
@@ -260,7 +260,7 @@
             this.imLab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imLab.Location = new System.Drawing.Point(3, 69);
             this.imLab.Name = "imLab";
-            this.imLab.Size = new System.Drawing.Size(269, 22);
+            this.imLab.Size = new System.Drawing.Size(268, 22);
             this.imLab.TabIndex = 13;
             this.imLab.Text = "Book Image";
             // 
@@ -270,7 +270,7 @@
             this.root.ColumnCount = 3;
             this.root.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.0534F));
             this.root.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.9466F));
-            this.root.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.root.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.root.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.root.Controls.Add(this.tableLayoutPanel3, 2, 0);
             this.root.Controls.Add(this.pictureBox1, 1, 0);
@@ -282,6 +282,9 @@
             this.root.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.root.Size = new System.Drawing.Size(845, 163);
             this.root.TabIndex = 14;
+            this.root.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
+            this.root.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove);
+            this.root.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp);
             // 
             // tableLayoutPanel3
             // 
@@ -291,13 +294,13 @@
             this.tableLayoutPanel3.Controls.Add(this.button2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(666, 13);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(665, 13);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(166, 147);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(167, 147);
             this.tableLayoutPanel3.TabIndex = 14;
             // 
             // button3
@@ -309,7 +312,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(3, 95);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 49);
+            this.button3.Size = new System.Drawing.Size(161, 49);
             this.button3.TabIndex = 18;
             this.button3.Text = "Modify";
             this.button3.UseVisualStyleBackColor = false;
@@ -323,7 +326,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(3, 49);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 40);
+            this.button2.Size = new System.Drawing.Size(161, 40);
             this.button2.TabIndex = 17;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
@@ -337,7 +340,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 40);
+            this.button1.Size = new System.Drawing.Size(161, 40);
             this.button1.TabIndex = 16;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -346,7 +349,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(461, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(460, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 147);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

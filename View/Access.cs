@@ -25,6 +25,7 @@ namespace Biblio
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
+        //enter key is pressed, grant access 
         private void libPwd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -47,6 +48,7 @@ namespace Biblio
             libA = new LibrarianADO();
             libA.load();
             libPwd.Select();
+            //remap enter key based on whether there's a librarian in db or not
             if (libA.libADOList.Count == 0)
             {
                 libName.Properties.NullText = "NEW Librarian name...";
@@ -61,6 +63,7 @@ namespace Biblio
             }
         }
 
+        //enter key is pressed, create new librarian
         private void libPwd_KeyDownCreate(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

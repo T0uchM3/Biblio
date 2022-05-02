@@ -16,21 +16,14 @@ namespace Controller
 
         public void insert(Borrow borrow)
         {
-            //SqlCommand cmd = new SqlCommand("insert into Book values ('" + book.Title + "' , '" +
-            //                                "' CONVERT(VARBINARY(MAX) '" +
-            //                                book.Picture +
-            //                                "'))");
-            //cnx.executeCommand(cmd);
             Console.WriteLine("INSERTED LIBRARIAN");
 
-            using (SqlCommand cmd = new SqlCommand("insert into Borrow values (@LibID ,@MemID,@BookID,@Date,@NbrDays)"))
+            using (SqlCommand cmd = new SqlCommand("insert into Borrow values (@LibID ,@MemID,@BookID,@Date)"))
             {
                 cmd.Parameters.AddWithValue("@LibID", borrow.LibId);
                 cmd.Parameters.AddWithValue("@MemID", borrow.MemId);
                 cmd.Parameters.AddWithValue("@BookID", borrow.BookId);
                 cmd.Parameters.AddWithValue("@Date", borrow.Date);
-                cmd.Parameters.AddWithValue("@NbrDays", borrow.NbrDays);
-
                 cnx.executeCommand(cmd);
             }
         }
@@ -61,8 +54,6 @@ namespace Controller
                 borrow.MemId = (int)reader.GetValue(2);
                 borrow.BookId = (int)reader.GetValue(2);
                 borrow.Date = (DateTime)reader.GetValue(2);
-                borrow.NbrDays = (int)reader.GetValue(2);
-                borrowADOList.Add(borrow);
             }
 
             reader.Close();
