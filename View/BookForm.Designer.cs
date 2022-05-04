@@ -1,6 +1,6 @@
 ﻿namespace Biblio
 {
-    partial class Books
+    partial class BookForm
     {
         /// <summary>
         /// Required designer variable.

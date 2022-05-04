@@ -116,11 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BiblioDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Books.cs">
+    <Compile Include="BookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Books.Designer.cs">
-      <DependentUpon>Books.cs</DependentUpon>
+    <Compile Include="BookForm.Designer.cs">
+      <DependentUpon>BookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BorrowForm.cs">
       <SubType>Form</SubType>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="Access.resx">
       <DependentUpon>Access.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Books.resx">
-      <DependentUpon>Books.cs</DependentUpon>
+    <EmbeddedResource Include="BookForm.resx">
+      <DependentUpon>BookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowForm.resx">
       <DependentUpon>BorrowForm.cs</DependentUpon>

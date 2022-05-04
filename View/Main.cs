@@ -13,9 +13,14 @@ namespace Biblio
 {
     public partial class Main : Form
     {
-        private Form shadow;
-        private Form msg;
+        private Form _shadow;
+        private Form _msg;
         private int librarianId = 0;
+        Boolean wasInBook = false;
+        Boolean wasInVisit = false;
+        Boolean wasInBorrow = false;
+        public bool _sideBarExpanded;
+        private DateTime start;
 
         public Main()
         {
@@ -40,9 +45,7 @@ namespace Biblio
 
         public void hideDialog()
         {
-            Console.WriteLine("aaaaaaaaaaaaaaaaaaaaaa");
-            msg.Hide();
-            shadow.Hide();
+            _shadow.Hide();
             this.WindowState = FormWindowState.Maximized;
             this.WindowState = FormWindowState.Normal;
 
@@ -53,46 +56,131 @@ namespace Biblio
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            shadow = new Form();
-            shadow.MinimizeBox = false;
-            shadow.MaximizeBox = false;
-            shadow.ControlBox = false;
+            _shadow = new Form();
+            _shadow.MinimizeBox = false;
+            _shadow.MaximizeBox = false;
+            _shadow.ControlBox = false;
 
-            shadow.Text = "";
-            shadow.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            shadow.Size = Size;
-            shadow.BackColor = Color.Black;
-            shadow.Opacity = 0.3;
-            shadow.Show();
-            shadow.Location = Location;
-            shadow.Enabled = false;
+            _shadow.Text = "";
+            _shadow.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            _shadow.Size = Size;
+            _shadow.BackColor = Color.Black;
+            _shadow.Opacity = 0.3;
+            _shadow.Show();
+            _shadow.Location = Location;
+            _shadow.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sideBarTimer.Start();
+            //sideBarTimer.Start();
         }
 
-        private bool sideBarExpanded;
+        private void sideBarEnter(object sender, EventArgs e)
+        {
+            if (!_sideBarExpanded) //sidebar is closed
+            {
+                sideBarTimer.Start();
+            }
+        }
+
+        void sideBarLeave(object sender, EventArgs e)
+        {
+            //if (_sideBarExpanded)
+            //{
+            //    sideBarTimer.Start();
+            //}
+        }
+
+        void sideBarLeave2(object sender, EventArgs e)
+        {
+            if (_sideBarExpanded)
+            {
+                Console.WriteLine("leaft " + sender.ToString());
+                if (sideBar.ClientRectangle.Contains(sideBar.PointToClient(Control.MousePosition)))
+                {
+                    Console.WriteLine("sideBar ");
+                    return;
+                }
+
+                //if (dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
+                //{
+                //    Console.WriteLine("dashBtn ");
+                //    return;
+                //}
+
+                //Console.WriteLine("****TICK ");
+                Console.WriteLine("TICK ");
+
+                start = DateTime.Now;
+                timer1.Start();
+                //if (dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
+                //{
+                //    Console.WriteLine("dashBtn ");
+                //    return;
+                //}
+
+                sideBarTimer.Start();
+            }
+        }
+
+        void timerTick2(object sender, EventArgs e)
+        {
+            //Console.WriteLine("TICK ");
+            if ((DateTime.Now - start).TotalMilliseconds > 100)
+            {
+                Console.WriteLine("STTTOOOOOPPPPPP");
+                timer1.Stop();
+            }
+
+            if (dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
+            {
+                Console.WriteLine("dashBtnnnnnn ");
+                return;
+            }
+
+            if (sideBar.ClientRectangle.Contains(sideBar.PointToClient(Control.MousePosition)))
+            {
+                Console.WriteLine("sidebarrrrrrr ");
+                return;
+            }
+        }
 
         private void sideBarTimer_Tick(object sender, EventArgs e)
         {
-            if (sideBarExpanded)
+            if (_sideBarExpanded)
             {
+                //dummyRatCatcher.Width = 50;
                 sideBar.Width -= 10;
                 if (sideBar.Width == sideBar.MinimumSize.Width)
                 {
-                    sideBarExpanded = false;
+                    _sideBarExpanded = false;
                     sideBarTimer.Stop();
                 }
             }
             else
             {
                 sideBar.Width += 10;
+                //if (!dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
+                //{
+                //    Console.WriteLine(" WAY 222 FAAASSTT");
+                //    sideBarTimer.Stop();
+                //    sideBar.Width = 68;
+                //}
+
+                //dummyRatCatcher.Width = 205;
                 if (sideBar.Width == sideBar.MaximumSize.Width)
                 {
-                    sideBarExpanded = true;
+                    Console.WriteLine("EXPANDED");
+
+                    _sideBarExpanded = true;
                     sideBarTimer.Stop();
+                    if (!dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)) &&
+                        !sideBar.ClientRectangle.Contains(sideBar.PointToClient(Control.MousePosition)))
+                    {
+                        Console.WriteLine("FAAASSTT");
+                        sideBarTimer.Start();
+                    }
                 }
             }
         }
@@ -182,23 +270,23 @@ namespace Biblio
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-            Boolean found = false;
-            foreach (Form frm in fc)
-            {
-                if (frm.Name == "Books")
-                {
-                    found = true;
-                }
-            }
+            //FormCollection fc = Application.OpenForms;
+            //Boolean found = false;
+            //foreach (Form frm in fc)
+            //{
+            //    if (frm.Name == "Books")
+            //    {
+            //        found = true;
+            //    }
+            //}
 
-            if (found == true)
-            {
-                (Application.OpenForms["Books"] as Books).Close();
-                this.topLayer.Controls.Remove((Application.OpenForms["Books"] as Books));
-                //frm.Close();
-            }
-
+            //if (found == true)
+            //{
+            //    (Application.OpenForms["Books"] as BookForm).Close();
+            //    this.topLayer.Controls.Remove((Application.OpenForms["Books"] as BookForm));
+            //    //frm.Close();
+            //}
+            contentChange();
             BorrowForm borrow = new BorrowForm(librarianId);
             borrow.TopLevel = false;
             borrow.AutoScroll = true;
@@ -206,65 +294,80 @@ namespace Biblio
             borrow.Dock = DockStyle.Fill;
             borrow.Show();
             sizer.BringToFront();
+            wasInBorrow = true;
             //labelControl1.BringToFront();
+        }
+
+        void contentChange()
+        {
+            Form tempForm = null;
+            if (wasInBorrow)
+            {
+                wasInBorrow = false;
+                tempForm = Application.OpenForms["BorrowForm"] as BorrowForm;
+            }
+
+            if (wasInBook)
+            {
+                wasInBook = false;
+                tempForm = Application.OpenForms["Books"] as BookForm;
+            }
+
+            if (wasInVisit)
+            {
+                wasInVisit = false;
+                tempForm = Application.OpenForms["VisitorsForm"] as VisitorsForm;
+            }
+
+            if (tempForm == null)
+                return;
+            tempForm.Close();
+            this.topLayer.Controls.Remove(tempForm);
         }
 
         private void bookLibBtn_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-            Boolean found = false;
-            foreach (Form frm in fc)
-            {
-                if (frm.Name == "Borrow")
-                {
-                    found = true;
-                }
-            }
+            contentChange();
 
-            if (found == true)
-            {
-                (Application.OpenForms["Borrow"] as BorrowForm).Close();
-                this.topLayer.Controls.Remove((Application.OpenForms["Borrow"] as BorrowForm));
-                //frm.Close();
-            }
-
-            Books book = new Books(this);
+            BookForm book = new BookForm(this);
             book.TopLevel = false;
             book.AutoScroll = true;
             this.topLayer.Controls.Add(book);
             book.Dock = DockStyle.Fill;
             book.Show();
             sizer.BringToFront();
+            wasInBook = true;
             //labelControl1.SendToBack();
         }
 
         private void visitorBtn_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-            Boolean foundBook = false;
-            Boolean foundBorrow = false;
-            foreach (Form frm in fc)
-            {
-                if (frm.Name == "Borrow")
-                {
-                    foundBorrow = true;
-                }
-            }
+            //FormCollection fc = Application.OpenForms;
+            //Boolean foundBook = false;
+            //Boolean foundBorrow = false;
+            //foreach (Form frm in fc)
+            //{
+            //    if (frm.Name == "Borrow")
+            //    {
+            //        foundBorrow = true;
+            //    }
+            //}
 
-            if (foundBorrow == true)
-            {
-                (Application.OpenForms["Borrow"] as BorrowForm).Close();
-                this.topLayer.Controls.Remove((Application.OpenForms["Borrow"] as BorrowForm));
-                //frm.Close();
-            }
-
-            VisitorsForm visitor = new VisitorsForm();
+            //if (foundBorrow == true)
+            //{
+            //    (Application.OpenForms["Borrow"] as BorrowForm).Close();
+            //    this.topLayer.Controls.Remove((Application.OpenForms["Borrow"] as BorrowForm));
+            //    //frm.Close();
+            //}
+            contentChange();
+            VisitorsForm visitor = new VisitorsForm(this);
             visitor.TopLevel = false;
             visitor.AutoScroll = true;
             this.topLayer.Controls.Add(visitor);
             visitor.Dock = DockStyle.Fill;
             visitor.Show();
             sizer.BringToFront();
+            wasInVisit = true;
         }
     }
 }

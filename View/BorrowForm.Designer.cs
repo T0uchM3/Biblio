@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -87,7 +94,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.66994F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.33006F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -107,12 +114,12 @@
             this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.labelControl2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(573, 13);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(571, 13);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(208, 211);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(210, 211);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel2
@@ -121,7 +128,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(202, 153);
+            this.panel2.Size = new System.Drawing.Size(204, 153);
             this.panel2.TabIndex = 8;
             // 
             // memberLB
@@ -130,11 +137,35 @@
             this.memberLB.Appearance.Options.UseBackColor = true;
             this.memberLB.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.memberLB.DataSource = this.memberBindingSource;
-            this.memberLB.DisplayMember = "#Id";
+            this.memberLB.DisplayMember = "Id";
+            this.memberLB.ItemHeight = 30;
             this.memberLB.Location = new System.Drawing.Point(4, 4);
             this.memberLB.Name = "memberLB";
-            this.memberLB.Size = new System.Drawing.Size(205, 144);
+            this.memberLB.Size = new System.Drawing.Size(197, 144);
             this.memberLB.TabIndex = 9;
+            tableColumnDefinition1.Length.Value = 89D;
+            tableColumnDefinition2.Length.Value = 4D;
+            tableColumnDefinition3.Length.Value = 75D;
+            itemTemplateBase1.Columns.Add(tableColumnDefinition1);
+            itemTemplateBase1.Columns.Add(tableColumnDefinition2);
+            itemTemplateBase1.Columns.Add(tableColumnDefinition3);
+            templatedItemElement1.ColumnIndex = 2;
+            templatedItemElement1.FieldName = "Id";
+            templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement1.Text = "Id";
+            templatedItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement2.FieldName = "";
+            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement2.Text = "#";
+            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            itemTemplateBase1.Elements.Add(templatedItemElement1);
+            itemTemplateBase1.Elements.Add(templatedItemElement2);
+            itemTemplateBase1.Name = "template1";
+            tableRowDefinition1.Length.Value = 15D;
+            itemTemplateBase1.Rows.Add(tableRowDefinition1);
+            this.memberLB.Templates.Add(itemTemplateBase1);
             // 
             // memberBindingSource
             // 
@@ -156,7 +187,7 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl2.Location = new System.Drawing.Point(3, 3);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(202, 46);
+            this.labelControl2.Size = new System.Drawing.Size(204, 46);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Member Id";
             // 
@@ -167,12 +198,12 @@
             this.tableLayoutPanel4.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.labelControl3, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(183, 13);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(182, 13);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(162, 211);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(161, 211);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // panel3
@@ -181,7 +212,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(156, 148);
+            this.panel3.Size = new System.Drawing.Size(155, 148);
             this.panel3.TabIndex = 8;
             // 
             // bookLB
@@ -211,7 +242,7 @@
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl3.Location = new System.Drawing.Point(3, 3);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(156, 51);
+            this.labelControl3.Size = new System.Drawing.Size(155, 51);
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Book";
             // 
@@ -223,7 +254,7 @@
             this.tableLayoutPanel2.Controls.Add(this.dueDate, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lendBtn, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(351, 13);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(349, 13);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));

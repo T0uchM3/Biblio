@@ -31,26 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisitorsForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.addVis = new System.Windows.Forms.Button();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.visAge = new Biblio.RoundTf();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.visName = new Biblio.RoundTf();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.biblioDataSet = new Biblio.BiblioDataSet();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAge1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colVisitDay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.memMail = new Biblio.RoundTf();
@@ -82,16 +64,27 @@
             this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.memberTableAdapter = new Biblio.BiblioDataSetTableAdapters.MemberTableAdapter();
             this.visitorTableAdapter = new Biblio.BiblioDataSetTableAdapters.VisitorTableAdapter();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.visName = new Biblio.RoundTf();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.visAge = new Biblio.RoundTf();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAge1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colVisitDay = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.addVis = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visAge.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memMail.Properties)).BeginInit();
@@ -105,6 +98,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visAge.Properties)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -121,156 +121,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.labelControl4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel8, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.gridControl2, 0, 3);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61111F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 274F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(304, 444);
-            this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 4;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel7.Controls.Add(this.button5, 3, 0);
-            this.tableLayoutPanel7.Controls.Add(this.button6, 2, 0);
-            this.tableLayoutPanel7.Controls.Add(this.button7, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.addVis, 0, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 127);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(298, 40);
-            this.tableLayoutPanel7.TabIndex = 9;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(242, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 27);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(167, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 27);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(85, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(71, 27);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // addVis
-            // 
-            this.addVis.Location = new System.Drawing.Point(3, 3);
-            this.addVis.Name = "addVis";
-            this.addVis.Size = new System.Drawing.Size(71, 27);
-            this.addVis.TabIndex = 0;
-            this.addVis.Text = "Add";
-            this.addVis.UseVisualStyleBackColor = true;
-            this.addVis.Click += new System.EventHandler(this.addVis_Click);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl4.Location = new System.Drawing.Point(3, 3);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(298, 28);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Visitors";
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.42282F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.57718F));
-            this.tableLayoutPanel8.Controls.Add(this.visAge, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.labelControl5, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.visName, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.labelControl6, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 37);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(298, 84);
-            this.tableLayoutPanel8.TabIndex = 7;
-            // 
-            // visAge
-            // 
-            this.visAge.Location = new System.Drawing.Point(192, 38);
-            this.visAge.Name = "visAge";
-            this.visAge.Properties.AutoHeight = false;
-            this.visAge.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.visAge.Size = new System.Drawing.Size(103, 33);
-            this.visAge.TabIndex = 6;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl5.Location = new System.Drawing.Point(192, 3);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(103, 29);
-            this.labelControl5.TabIndex = 5;
-            this.labelControl5.Text = "Age";
-            // 
-            // visName
-            // 
-            this.visName.Location = new System.Drawing.Point(3, 38);
-            this.visName.Name = "visName";
-            this.visName.Properties.AutoHeight = false;
-            this.visName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.visName.Size = new System.Drawing.Size(183, 33);
-            this.visName.TabIndex = 1;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl6.Location = new System.Drawing.Point(3, 3);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(183, 29);
-            this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "Name";
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.DataSource = this.visitorBindingSource;
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 173);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(298, 268);
-            this.gridControl2.TabIndex = 10;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.tableLayoutPanel1.MouseEnter += new System.EventHandler(this.sideBarLeave);
             // 
             // visitorBindingSource
             // 
@@ -281,48 +132,6 @@
             // 
             this.biblioDataSet.DataSetName = "BiblioDataSet";
             this.biblioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId1,
-            this.colName1,
-            this.colAge1,
-            this.colVisitDay});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.AllowIncrementalSearch = true;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colVisitDay, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // colId1
-            // 
-            this.colId1.FieldName = "Id";
-            this.colId1.Name = "colId1";
-            this.colId1.Visible = true;
-            this.colId1.VisibleIndex = 0;
-            // 
-            // colName1
-            // 
-            this.colName1.FieldName = "Name";
-            this.colName1.Name = "colName1";
-            this.colName1.Visible = true;
-            this.colName1.VisibleIndex = 1;
-            // 
-            // colAge1
-            // 
-            this.colAge1.FieldName = "Age";
-            this.colAge1.Name = "colAge1";
-            this.colAge1.Visible = true;
-            this.colAge1.VisibleIndex = 2;
-            // 
-            // colVisitDay
-            // 
-            this.colVisitDay.FieldName = "VisitDay";
-            this.colVisitDay.Name = "colVisitDay";
-            this.colVisitDay.Visible = true;
-            this.colVisitDay.VisibleIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -350,7 +159,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.2F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.8F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel5.Controls.Add(this.memMail, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.labelControl8, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.memPhone, 2, 1);
@@ -379,13 +188,13 @@
             this.labelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl8.Location = new System.Drawing.Point(3, 3);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(240, 22);
+            this.labelControl8.Size = new System.Drawing.Size(239, 22);
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "Mail";
             // 
             // memPhone
             // 
-            this.memPhone.Location = new System.Drawing.Point(291, 31);
+            this.memPhone.Location = new System.Drawing.Point(290, 31);
             this.memPhone.Name = "memPhone";
             this.memPhone.Properties.AutoHeight = false;
             this.memPhone.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -395,16 +204,16 @@
             // labelControl3
             // 
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl3.Location = new System.Drawing.Point(291, 3);
+            this.labelControl3.Location = new System.Drawing.Point(290, 3);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(184, 22);
+            this.labelControl3.Size = new System.Drawing.Size(185, 22);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Phone";
             // 
             // labelControl9
             // 
             this.labelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl9.Location = new System.Drawing.Point(249, 3);
+            this.labelControl9.Location = new System.Drawing.Point(248, 3);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(36, 22);
             this.labelControl9.TabIndex = 7;
@@ -652,6 +461,198 @@
             // 
             this.visitorTableAdapter.ClearBeforeFill = true;
             // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.42282F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.57718F));
+            this.tableLayoutPanel8.Controls.Add(this.visAge, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.labelControl5, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.visName, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.labelControl6, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 37);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(298, 84);
+            this.tableLayoutPanel8.TabIndex = 7;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl6.Location = new System.Drawing.Point(3, 3);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(183, 29);
+            this.labelControl6.TabIndex = 2;
+            this.labelControl6.Text = "Name";
+            // 
+            // visName
+            // 
+            this.visName.Location = new System.Drawing.Point(3, 38);
+            this.visName.Name = "visName";
+            this.visName.Properties.AutoHeight = false;
+            this.visName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.visName.Size = new System.Drawing.Size(183, 33);
+            this.visName.TabIndex = 1;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl5.Location = new System.Drawing.Point(192, 3);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(103, 29);
+            this.labelControl5.TabIndex = 5;
+            this.labelControl5.Text = "Age";
+            // 
+            // visAge
+            // 
+            this.visAge.Location = new System.Drawing.Point(192, 38);
+            this.visAge.Name = "visAge";
+            this.visAge.Properties.AutoHeight = false;
+            this.visAge.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.visAge.Size = new System.Drawing.Size(103, 33);
+            this.visAge.TabIndex = 6;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelControl4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel8, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.gridControl2, 0, 3);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61111F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 274F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(304, 444);
+            this.tableLayoutPanel2.TabIndex = 5;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId1,
+            this.colName1,
+            this.colAge1,
+            this.colVisitDay});
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.AllowIncrementalSearch = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colVisitDay, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colId1
+            // 
+            this.colId1.FieldName = "Id";
+            this.colId1.Name = "colId1";
+            this.colId1.Visible = true;
+            this.colId1.VisibleIndex = 0;
+            // 
+            // colName1
+            // 
+            this.colName1.FieldName = "Name";
+            this.colName1.Name = "colName1";
+            this.colName1.Visible = true;
+            this.colName1.VisibleIndex = 1;
+            // 
+            // colAge1
+            // 
+            this.colAge1.FieldName = "Age";
+            this.colAge1.Name = "colAge1";
+            this.colAge1.Visible = true;
+            this.colAge1.VisibleIndex = 2;
+            // 
+            // colVisitDay
+            // 
+            this.colVisitDay.FieldName = "VisitDay";
+            this.colVisitDay.Name = "colVisitDay";
+            this.colVisitDay.Visible = true;
+            this.colVisitDay.VisibleIndex = 3;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.DataSource = this.visitorBindingSource;
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(3, 173);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(298, 268);
+            this.gridControl2.TabIndex = 10;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // addVis
+            // 
+            this.addVis.Location = new System.Drawing.Point(3, 3);
+            this.addVis.Name = "addVis";
+            this.addVis.Size = new System.Drawing.Size(71, 27);
+            this.addVis.TabIndex = 0;
+            this.addVis.Text = "Add";
+            this.addVis.UseVisualStyleBackColor = true;
+            this.addVis.Click += new System.EventHandler(this.addVis_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(85, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(71, 27);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(167, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(60, 27);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(242, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(53, 27);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 4;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel7.Controls.Add(this.button5, 3, 0);
+            this.tableLayoutPanel7.Controls.Add(this.button6, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.button7, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.addVis, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 127);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(298, 40);
+            this.tableLayoutPanel7.TabIndex = 9;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl4.Location = new System.Drawing.Point(3, 3);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(298, 28);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Visitors";
+            // 
             // VisitorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -662,18 +663,10 @@
             this.Name = "VisitorsForm";
             this.Text = "VisitorsForm";
             this.Load += new System.EventHandler(this.VisitorsForm_Load);
+            this.Shown += new System.EventHandler(this.sideBarLeave);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visAge.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -690,6 +683,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visAge.Properties)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -697,18 +699,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button addVis;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private RoundTf visAge;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private RoundTf visName;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private RoundTf memMail;
@@ -733,8 +723,6 @@
         private BiblioDataSet biblioDataSet;
         private System.Windows.Forms.BindingSource memberBindingSource;
         private BiblioDataSetTableAdapters.MemberTableAdapter memberTableAdapter;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
@@ -744,6 +732,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;
         private System.Windows.Forms.BindingSource visitorBindingSource;
         private BiblioDataSetTableAdapters.VisitorTableAdapter visitorTableAdapter;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button addVis;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private RoundTf visAge;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private RoundTf visName;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colId1;
         private DevExpress.XtraGrid.Columns.GridColumn colName1;
         private DevExpress.XtraGrid.Columns.GridColumn colAge1;

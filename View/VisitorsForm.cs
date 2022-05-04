@@ -14,8 +14,11 @@ namespace Biblio
 {
     public partial class VisitorsForm : Form
     {
-        public VisitorsForm()
+        Main _mainRef;
+
+        public VisitorsForm(Main _mainRef)
         {
+            this._mainRef = _mainRef;
             InitializeComponent();
         }
 
@@ -55,6 +58,14 @@ namespace Biblio
             MemberADO memADO = new MemberADO();
             memADO.insert(member);
             VisitorsForm_Load(sender, null);
+        }
+
+        void sideBarLeave(object sender, EventArgs e)
+        {
+            if (_mainRef._sideBarExpanded)
+            {
+                _mainRef.sideBarTimer.Start();
+            }
         }
     }
 }

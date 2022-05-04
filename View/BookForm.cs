@@ -14,12 +14,12 @@ using Controller;
 
 namespace Biblio
 {
-    public partial class Books : Form
+    public partial class BookForm : Form
     {
         string selectedFileName;
         Main mainRef;
 
-        public Books(Main main)
+        public BookForm(Main main)
         {
             mainRef = main;
             InitializeComponent();

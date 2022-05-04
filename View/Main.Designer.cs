@@ -32,7 +32,7 @@
             this.sideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Dashboard = new System.Windows.Forms.Button();
+            this.dashBtn = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.bookLibBtn = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -48,6 +48,8 @@
             this.sizer = new System.Windows.Forms.Label();
             this.biblioDataSet = new Biblio.BiblioDataSet();
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dummyRatCatcher = new DevExpress.XtraEditors.SimpleButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.sideBar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -62,6 +64,8 @@
             // 
             // sideBar
             // 
+            this.sideBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.sideBar.Controls.Add(this.panel1);
             this.sideBar.Controls.Add(this.panel2);
@@ -70,13 +74,14 @@
             this.sideBar.Controls.Add(this.panel9);
             this.sideBar.Controls.Add(this.panel3);
             this.sideBar.Controls.Add(this.panel7);
-            this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideBar.Location = new System.Drawing.Point(0, 0);
             this.sideBar.MaximumSize = new System.Drawing.Size(200, 700);
             this.sideBar.MinimumSize = new System.Drawing.Size(68, 700);
             this.sideBar.Name = "sideBar";
             this.sideBar.Size = new System.Drawing.Size(68, 700);
             this.sideBar.TabIndex = 3;
+            this.sideBar.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.sideBar.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // panel1
             // 
@@ -87,33 +92,35 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.Dashboard);
+            this.panel2.Controls.Add(this.dashBtn);
             this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(197, 48);
             this.panel2.TabIndex = 5;
             // 
-            // Dashboard
+            // dashBtn
             // 
-            this.Dashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Dashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Dashboard.Image = global::Biblio.Properties.Resources.stats__6_;
-            this.Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dashboard.Location = new System.Drawing.Point(-13, -3);
-            this.Dashboard.Name = "Dashboard";
-            this.Dashboard.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
-            this.Dashboard.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Dashboard.Size = new System.Drawing.Size(311, 57);
-            this.Dashboard.TabIndex = 6;
-            this.Dashboard.Text = "    Dashboard";
-            this.Dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Dashboard.UseCompatibleTextRendering = true;
-            this.Dashboard.UseVisualStyleBackColor = true;
-            this.Dashboard.Click += new System.EventHandler(this.button1_Click);
+            this.dashBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.dashBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dashBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dashBtn.Image = global::Biblio.Properties.Resources.stats__6_;
+            this.dashBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashBtn.Location = new System.Drawing.Point(-13, -3);
+            this.dashBtn.Name = "dashBtn";
+            this.dashBtn.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
+            this.dashBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dashBtn.Size = new System.Drawing.Size(311, 57);
+            this.dashBtn.TabIndex = 6;
+            this.dashBtn.Text = "    Dashboard";
+            this.dashBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.dashBtn.UseCompatibleTextRendering = true;
+            this.dashBtn.UseVisualStyleBackColor = true;
+            this.dashBtn.Click += new System.EventHandler(this.button1_Click);
+            this.dashBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.dashBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // panel6
             // 
@@ -144,6 +151,7 @@
             this.bookLibBtn.UseCompatibleTextRendering = true;
             this.bookLibBtn.UseVisualStyleBackColor = true;
             this.bookLibBtn.Click += new System.EventHandler(this.bookLibBtn_Click);
+            this.bookLibBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
             // 
             // panel8
             // 
@@ -173,6 +181,7 @@
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseCompatibleTextRendering = true;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.MouseEnter += new System.EventHandler(this.sideBarEnter);
             // 
             // panel9
             // 
@@ -203,6 +212,7 @@
             this.borrowBtn.UseCompatibleTextRendering = true;
             this.borrowBtn.UseVisualStyleBackColor = true;
             this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
+            this.borrowBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
             // 
             // panel3
             // 
@@ -233,6 +243,7 @@
             this.visitorBtn.UseCompatibleTextRendering = true;
             this.visitorBtn.UseVisualStyleBackColor = true;
             this.visitorBtn.Click += new System.EventHandler(this.visitorBtn_Click);
+            this.visitorBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
             // 
             // panel7
             // 
@@ -262,6 +273,7 @@
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseCompatibleTextRendering = true;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.MouseEnter += new System.EventHandler(this.sideBarEnter);
             // 
             // sideBarTimer
             // 
@@ -271,6 +283,7 @@
             // topLayer
             // 
             this.topLayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.topLayer.Controls.Add(this.dummyRatCatcher);
             this.topLayer.Controls.Add(this.sizer);
             this.topLayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topLayer.Location = new System.Drawing.Point(0, 0);
@@ -304,6 +317,23 @@
             // 
             this.bookBindingSource.DataMember = "Book";
             this.bookBindingSource.DataSource = this.biblioDataSet;
+            // 
+            // dummyRatCatcher
+            // 
+            this.dummyRatCatcher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dummyRatCatcher.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dummyRatCatcher.Appearance.Options.UseBackColor = true;
+            this.dummyRatCatcher.Location = new System.Drawing.Point(0, 0);
+            this.dummyRatCatcher.Name = "dummyRatCatcher";
+            this.dummyRatCatcher.Size = new System.Drawing.Size(49, 681);
+            this.dummyRatCatcher.TabIndex = 2;
+            this.dummyRatCatcher.MouseEnter += new System.EventHandler(this.sideBarLeave);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5;
+            this.timer1.Tick += new System.EventHandler(this.timerTick2);
             // 
             // Main
             // 
@@ -340,8 +370,8 @@
         private System.Windows.Forms.FlowLayoutPanel sideBar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Dashboard;
-        private System.Windows.Forms.Timer sideBarTimer;
+        private System.Windows.Forms.Button dashBtn;
+        public System.Windows.Forms.Timer sideBarTimer;
         private System.Windows.Forms.Panel topLayer;
         private System.Windows.Forms.Label sizer;
         private BiblioDataSet biblioDataSet;
@@ -356,5 +386,7 @@
         private System.Windows.Forms.Button borrowBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button visitorBtn;
+        private DevExpress.XtraEditors.SimpleButton dummyRatCatcher;
+        private System.Windows.Forms.Timer timer1;
     }
 }
