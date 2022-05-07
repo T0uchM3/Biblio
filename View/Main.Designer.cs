@@ -42,14 +42,20 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.visitorBtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.topLayer = new System.Windows.Forms.Panel();
             this.sizer = new System.Windows.Forms.Label();
+            this.delayExecTimer = new System.Windows.Forms.Timer(this.components);
             this.biblioDataSet = new Biblio.BiblioDataSet();
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dummyRatCatcher = new DevExpress.XtraEditors.SimpleButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.visitorTableAdapter = new Biblio.BiblioDataSetTableAdapters.VisitorTableAdapter();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.sideBar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -60,6 +66,8 @@
             this.topLayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // sideBar
@@ -75,10 +83,10 @@
             this.sideBar.Controls.Add(this.panel3);
             this.sideBar.Controls.Add(this.panel7);
             this.sideBar.Location = new System.Drawing.Point(0, 0);
-            this.sideBar.MaximumSize = new System.Drawing.Size(200, 700);
-            this.sideBar.MinimumSize = new System.Drawing.Size(68, 700);
+            this.sideBar.MaximumSize = new System.Drawing.Size(200, 0);
+            this.sideBar.MinimumSize = new System.Drawing.Size(68, 500);
             this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(68, 700);
+            this.sideBar.Size = new System.Drawing.Size(68, 500);
             this.sideBar.TabIndex = 3;
             this.sideBar.MouseEnter += new System.EventHandler(this.sideBarEnter);
             this.sideBar.MouseLeave += new System.EventHandler(this.sideBarLeave2);
@@ -118,7 +126,7 @@
             this.dashBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.dashBtn.UseCompatibleTextRendering = true;
             this.dashBtn.UseVisualStyleBackColor = true;
-            this.dashBtn.Click += new System.EventHandler(this.button1_Click);
+            this.dashBtn.Click += new System.EventHandler(this.dashBtn_Click);
             this.dashBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
             this.dashBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
@@ -152,6 +160,7 @@
             this.bookLibBtn.UseVisualStyleBackColor = true;
             this.bookLibBtn.Click += new System.EventHandler(this.bookLibBtn_Click);
             this.bookLibBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.bookLibBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // panel8
             // 
@@ -182,6 +191,7 @@
             this.button4.UseCompatibleTextRendering = true;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.button4.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // panel9
             // 
@@ -213,6 +223,7 @@
             this.borrowBtn.UseVisualStyleBackColor = true;
             this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
             this.borrowBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.borrowBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // panel3
             // 
@@ -244,36 +255,39 @@
             this.visitorBtn.UseVisualStyleBackColor = true;
             this.visitorBtn.Click += new System.EventHandler(this.visitorBtn_Click);
             this.visitorBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.visitorBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button3);
+            this.panel7.Controls.Add(this.exitBtn);
             this.panel7.Location = new System.Drawing.Point(0, 393);
             this.panel7.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(197, 48);
             this.panel7.TabIndex = 10;
             // 
-            // button3
+            // exitBtn
             // 
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Image = global::Biblio.Properties.Resources.cogwheel__1_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-13, -3);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
-            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(311, 57);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "    Dashboard";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseCompatibleTextRendering = true;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.exitBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.exitBtn.Image = global::Biblio.Properties.Resources.power_button;
+            this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitBtn.Location = new System.Drawing.Point(-13, -3);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
+            this.exitBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.exitBtn.Size = new System.Drawing.Size(311, 57);
+            this.exitBtn.TabIndex = 6;
+            this.exitBtn.Text = "    Exit";
+            this.exitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exitBtn.UseCompatibleTextRendering = true;
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.exitBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.exitBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // sideBarTimer
             // 
@@ -283,7 +297,6 @@
             // topLayer
             // 
             this.topLayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.topLayer.Controls.Add(this.dummyRatCatcher);
             this.topLayer.Controls.Add(this.sizer);
             this.topLayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topLayer.Location = new System.Drawing.Point(0, 0);
@@ -308,6 +321,11 @@
             this.sizer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SizerMouseMove);
             this.sizer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SizerMouseUp);
             // 
+            // delayExecTimer
+            // 
+            this.delayExecTimer.Interval = 5;
+            this.delayExecTimer.Tick += new System.EventHandler(this.timerTick2);
+            // 
             // biblioDataSet
             // 
             this.biblioDataSet.DataSetName = "BiblioDataSet";
@@ -318,22 +336,56 @@
             this.bookBindingSource.DataMember = "Book";
             this.bookBindingSource.DataSource = this.biblioDataSet;
             // 
-            // dummyRatCatcher
+            // visitorBindingSource
             // 
-            this.dummyRatCatcher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dummyRatCatcher.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dummyRatCatcher.Appearance.Options.UseBackColor = true;
-            this.dummyRatCatcher.Location = new System.Drawing.Point(0, 0);
-            this.dummyRatCatcher.Name = "dummyRatCatcher";
-            this.dummyRatCatcher.Size = new System.Drawing.Size(49, 681);
-            this.dummyRatCatcher.TabIndex = 2;
-            this.dummyRatCatcher.MouseEnter += new System.EventHandler(this.sideBarLeave);
+            this.visitorBindingSource.DataMember = "Visitor";
+            this.visitorBindingSource.DataSource = this.biblioDataSet;
             // 
-            // timer1
+            // visitorTableAdapter
             // 
-            this.timer1.Interval = 5;
-            this.timer1.Tick += new System.EventHandler(this.timerTick2);
+            this.visitorTableAdapter.ClearBeforeFill = true;
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.MaxItemId = 26;
+            this.barManager1.ShowScreenTipsInMenus = true;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(800, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 500);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(800, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 500);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(800, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 500);
             // 
             // Main
             // 
@@ -345,6 +397,10 @@
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.sideBar);
             this.Controls.Add(this.topLayer);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -362,7 +418,10 @@
             this.topLayer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -379,14 +438,20 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button bookLibBtn;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button borrowBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button visitorBtn;
-        private DevExpress.XtraEditors.SimpleButton dummyRatCatcher;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer delayExecTimer;
+        private System.Windows.Forms.BindingSource visitorBindingSource;
+        private BiblioDataSetTableAdapters.VisitorTableAdapter visitorTableAdapter;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
     }
 }

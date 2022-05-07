@@ -10,6 +10,7 @@ namespace Model
     {
         private String title;
         private byte[] picture;
+        private int id;
 
         public string Title
         {
@@ -21,6 +22,12 @@ namespace Model
         {
             get => picture;
             set => picture = value;
+        }
+
+        public int Id
+        {
+            get => id;
+            set => id = value;
         }
     }
 }

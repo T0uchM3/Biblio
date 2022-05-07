@@ -32,10 +32,10 @@ namespace Controller
             //cnx.executeCommand(cmd);
         }
 
-        public void delete(Visitor visitor)
+        public void delete(String id)
         {
-            //SqlCommand cmd = new SqlCommand("delete from  client  where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
+            SqlCommand cmd = new SqlCommand("delete from  Visitor  where id = " + id + "; ");
+            cnx.executeCommand(cmd);
         }
 
         public void load()
@@ -48,7 +48,7 @@ namespace Controller
                 visitor.Name = (String)reader.GetValue(1);
                 visitor.Age = (int)reader.GetValue(2);
                 visitor.VisitDay = (DateTime)reader.GetValue(3);
-
+                visitor.Id = (int)reader.GetValue(0);
                 visADOList.Add(visitor);
             }
 

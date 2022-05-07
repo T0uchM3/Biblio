@@ -52,8 +52,9 @@ namespace Controller
                 Borrow borrow = new Borrow();
                 borrow.LibId = (int)reader.GetValue(1);
                 borrow.MemId = (int)reader.GetValue(2);
-                borrow.BookId = (int)reader.GetValue(2);
-                borrow.Date = (DateTime)reader.GetValue(2);
+                borrow.BookId = (int)reader.GetValue(3);
+                borrow.Date = (DateTime)reader.GetValue(4);
+                borrowADOList.Add(borrow);
             }
 
             reader.Close();

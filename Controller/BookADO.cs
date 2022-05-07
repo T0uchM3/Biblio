@@ -16,13 +16,6 @@ namespace Controller
 
         public void insert(Book book)
         {
-            //SqlCommand cmd = new SqlCommand("insert into Book values ('" + book.Title + "' , '" +
-            //                                "' CONVERT(VARBINARY(MAX) '" +
-            //                                book.Picture +
-            //                                "'))");
-            //cnx.executeCommand(cmd);
-            Console.WriteLine("INSERTED LIBRARIAN");
-
             using (SqlCommand cmd = new SqlCommand("insert into Book values (@Title,@Picture)"))
             {
                 cmd.Parameters.AddWithValue("@Title", book.Title);
@@ -41,22 +34,28 @@ namespace Controller
             //cnx.executeCommand(cmd);
         }
 
-        public void delete(Book book)
+        public void delete(int id)
         {
-            //SqlCommand cmd = new SqlCommand("delete from  client  where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
+            SqlCommand cmd = new SqlCommand("delete from  Book  where id = " + id + "; ");
+            cnx.executeCommand(cmd);
+            load(null);
         }
 
-        public void load()
+        public void load(String title)
         {
             bookADOList = new List<Book>();
-            SqlDataReader reader = cnx.SDD("SELECT * FROM BOOK");
+            SqlDataReader reader;
+            if (title == null)
+                reader = cnx.SDD("SELECT * FROM BOOK");
+            else
+                reader = cnx.SDD("SELECT * FROM BOOK WHERE Title = '" + title + "';");
+
             while (reader.Read())
             {
                 Book book = new Book();
                 book.Title = (String)reader.GetValue(1);
                 book.Picture = (byte[])reader.GetValue(2);
-
+                book.Id = (int)reader.GetValue(0);
                 bookADOList.Add(book);
             }
 

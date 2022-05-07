@@ -128,6 +128,15 @@
     <Compile Include="BorrowForm.Designer.cs">
       <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowForm.resx">
       <DependentUpon>BorrowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -355,6 +367,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tintin-erik-bjorgenskjold.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookPHolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_book_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_book_24px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_book_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_book_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_book_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_remove_book_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_new_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_reduce_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_new_32px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_new_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_reduce_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pictures_folder_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Close_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_clone_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_arrow_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_power_off_button_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_power_off_button_36px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_power_off_button_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_28px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

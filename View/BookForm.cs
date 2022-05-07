@@ -47,18 +47,11 @@ namespace Biblio
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Book book = new Book();
-            book.Title = roundTf1.Text;
-            book.Picture = File.ReadAllBytes(selectedFileName);
-            BookADO bookADO = new BookADO();
-            bookADO.insert(book);
-            Books_Load(sender, null);
-        }
-
-
+        /// <summary>
+        /// DRAG BEGIN
+        /// </summary>
         private bool mouseDown;
+
         private Point lastLocation;
 
         private void MouseDown(object sender, MouseEventArgs e)
@@ -81,6 +74,90 @@ namespace Biblio
         private void MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        /// <summary>
+        /// DRAG END
+        /// </summary>
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            String title = searchTf.Text;
+            BookADO bookADO = new BookADO();
+            bookADO.load(title);
+            this.bookBindingSource.DataSource = bookADO.bookADOList;
+        }
+
+        private void clearSearchBtn_Click(object sender, EventArgs e)
+        {
+            BookADO bookADO = new BookADO();
+            bookADO.load(null);
+            this.bookBindingSource.DataSource = bookADO.bookADOList;
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            //get id from selected card
+            Int32 id = (Int32)tileView2.GetFocusedRowCellValue("Id");
+            BookADO bookADO = new BookADO();
+            bookADO.delete(id);
+            bookADO.load(null);
+            //Books_Load(sender, null);
+            bookBindingSource.DataSource = bookADO.bookADOList;
+        }
+
+        private void modifyBtn_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void onFocusChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            //if (tileView2.GetFocusedRowCellValue("Id") == null)
+            //    return;
+            Int32 id = 0;
+            String title = null;
+            byte[] imageByte = null;
+            try
+            {
+                id = (Int32)tileView2.GetFocusedRowCellValue("Id");
+                title = (String)tileView2.GetFocusedRowCellValue("Title");
+                imageByte = (byte[])tileView2.GetFocusedRowCellValue("Picture");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            if (title == null)
+                return;
+            ImageConverter converter = new ImageConverter();
+            pictureBox1.Image = (Image)converter.ConvertFrom(imageByte);
+            Console.WriteLine(" " + id);
+            roundTf1.Text = title;
+            //Books_Load(sender, null);
+        }
+
+        private void addEvent(object sender, EventArgs e)
+        {
+            Book book = new Book();
+            book.Title = roundTf1.Text;
+
+
+            //if no cover is selected the app will assign a generic cover  
+            if (selectedFileName == null)
+            {
+                ImageConverter converter = new ImageConverter();
+                Object nullHolder = Properties.Resources.ResourceManager.GetObject("note");
+                book.Picture = (byte[])converter.ConvertTo(nullHolder,
+                    typeof(byte[]));
+            }
+            else
+                book.Picture = File.ReadAllBytes(selectedFileName);
+
+            BookADO bookADO = new BookADO();
+            bookADO.insert(book);
+            bookADO.load(null);
+            bookBindingSource.DataSource = bookADO.bookADOList;
+            //Books_Load(sender, null);
         }
     }
 }

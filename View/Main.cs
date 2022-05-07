@@ -15,10 +15,11 @@ namespace Biblio
     {
         private Form _shadow;
         private Form _msg;
-        private int librarianId = 0;
+        private int librarianId = 2;
         Boolean wasInBook = false;
         Boolean wasInVisit = false;
         Boolean wasInBorrow = false;
+        Boolean wasInDashboard = false;
         public bool _sideBarExpanded;
         private DateTime start;
 
@@ -31,6 +32,8 @@ namespace Biblio
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'biblioDataSet.Visitor' table. You can move, or remove it, as needed.
+            this.visitorTableAdapter.Fill(this.biblioDataSet.Visitor);
             // TODO: This line of code loads data into the 'biblioDataSet.Book' table. You can move, or remove it, as needed.
             //this.bookTableAdapter.Fill(this.biblioDataSet.Book);
             //labelControl1.BringToFront();
@@ -71,11 +74,6 @@ namespace Biblio
             _shadow.Enabled = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //sideBarTimer.Start();
-        }
-
         private void sideBarEnter(object sender, EventArgs e)
         {
             if (!_sideBarExpanded) //sidebar is closed
@@ -84,41 +82,22 @@ namespace Biblio
             }
         }
 
-        void sideBarLeave(object sender, EventArgs e)
-        {
-            //if (_sideBarExpanded)
-            //{
-            //    sideBarTimer.Start();
-            //}
-        }
 
         void sideBarLeave2(object sender, EventArgs e)
         {
             if (_sideBarExpanded)
             {
-                Console.WriteLine("leaft " + sender.ToString());
                 if (sideBar.ClientRectangle.Contains(sideBar.PointToClient(Control.MousePosition)))
                 {
-                    Console.WriteLine("sideBar ");
                     return;
                 }
 
-                //if (dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
-                //{
-                //    Console.WriteLine("dashBtn ");
-                //    return;
-                //}
-
-                //Console.WriteLine("****TICK ");
-                Console.WriteLine("TICK ");
 
                 start = DateTime.Now;
-                timer1.Start();
-                //if (dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
-                //{
-                //    Console.WriteLine("dashBtn ");
-                //    return;
-                //}
+                //somehow the onMouseLeave event getting triggered
+                //while inside it's sender, hence why we added a timer
+                //to delay the execution of the event
+                delayExecTimer.Start();
 
                 sideBarTimer.Start();
             }
@@ -126,22 +105,18 @@ namespace Biblio
 
         void timerTick2(object sender, EventArgs e)
         {
-            //Console.WriteLine("TICK ");
             if ((DateTime.Now - start).TotalMilliseconds > 100)
             {
-                Console.WriteLine("STTTOOOOOPPPPPP");
-                timer1.Stop();
+                delayExecTimer.Stop();
             }
 
             if (dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
             {
-                Console.WriteLine("dashBtnnnnnn ");
                 return;
             }
 
             if (sideBar.ClientRectangle.Contains(sideBar.PointToClient(Control.MousePosition)))
             {
-                Console.WriteLine("sidebarrrrrrr ");
                 return;
             }
         }
@@ -150,7 +125,6 @@ namespace Biblio
         {
             if (_sideBarExpanded)
             {
-                //dummyRatCatcher.Width = 50;
                 sideBar.Width -= 10;
                 if (sideBar.Width == sideBar.MinimumSize.Width)
                 {
@@ -161,24 +135,13 @@ namespace Biblio
             else
             {
                 sideBar.Width += 10;
-                //if (!dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)))
-                //{
-                //    Console.WriteLine(" WAY 222 FAAASSTT");
-                //    sideBarTimer.Stop();
-                //    sideBar.Width = 68;
-                //}
-
-                //dummyRatCatcher.Width = 205;
                 if (sideBar.Width == sideBar.MaximumSize.Width)
                 {
-                    Console.WriteLine("EXPANDED");
-
                     _sideBarExpanded = true;
                     sideBarTimer.Stop();
                     if (!dashBtn.ClientRectangle.Contains(dashBtn.PointToClient(Control.MousePosition)) &&
                         !sideBar.ClientRectangle.Contains(sideBar.PointToClient(Control.MousePosition)))
                     {
-                        Console.WriteLine("FAAASSTT");
                         sideBarTimer.Start();
                     }
                 }
@@ -310,7 +273,7 @@ namespace Biblio
             if (wasInBook)
             {
                 wasInBook = false;
-                tempForm = Application.OpenForms["Books"] as BookForm;
+                tempForm = Application.OpenForms["BookForm"] as BookForm;
             }
 
             if (wasInVisit)
@@ -319,9 +282,16 @@ namespace Biblio
                 tempForm = Application.OpenForms["VisitorsForm"] as VisitorsForm;
             }
 
+            if (wasInDashboard)
+            {
+                wasInDashboard = false;
+                tempForm = Application.OpenForms["Dashboard"] as Dashboard;
+            }
+
             if (tempForm == null)
                 return;
             tempForm.Close();
+            Console.WriteLine("CLOSE SHIT UP");
             this.topLayer.Controls.Remove(tempForm);
         }
 
@@ -342,23 +312,6 @@ namespace Biblio
 
         private void visitorBtn_Click(object sender, EventArgs e)
         {
-            //FormCollection fc = Application.OpenForms;
-            //Boolean foundBook = false;
-            //Boolean foundBorrow = false;
-            //foreach (Form frm in fc)
-            //{
-            //    if (frm.Name == "Borrow")
-            //    {
-            //        foundBorrow = true;
-            //    }
-            //}
-
-            //if (foundBorrow == true)
-            //{
-            //    (Application.OpenForms["Borrow"] as BorrowForm).Close();
-            //    this.topLayer.Controls.Remove((Application.OpenForms["Borrow"] as BorrowForm));
-            //    //frm.Close();
-            //}
             contentChange();
             VisitorsForm visitor = new VisitorsForm(this);
             visitor.TopLevel = false;
@@ -368,6 +321,24 @@ namespace Biblio
             visitor.Show();
             sizer.BringToFront();
             wasInVisit = true;
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void dashBtn_Click(object sender, EventArgs e)
+        {
+            contentChange();
+            Dashboard dashboard = new Dashboard(this);
+            dashboard.TopLevel = false;
+            dashboard.AutoScroll = true;
+            this.topLayer.Controls.Add(dashboard);
+            dashboard.Dock = DockStyle.Fill;
+            dashboard.Show();
+            sizer.BringToFront();
+            wasInDashboard = true;
         }
     }
 }

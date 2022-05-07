@@ -35,17 +35,17 @@ namespace Controller
 
         public void update(Member member)
         {
-            //SqlCommand cmd = new SqlCommand("update  client set nom ='" + client.Nom + "' ,  prenom =  '" +
-            //                                client.Prenom + "' , adresse =  '" + client.Adresse + "' , tel =  '" +
-            //                                client.Telephone + "' , code_postale =  '" + client.Code_postal +
-            //                                "' where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
+            SqlCommand cmd = new SqlCommand("update Member set Name ='" + member.Name + "' ,  Since =  '" +
+                                            member.Since + "' , Age =  '" + member.Age + "' , Mail =  '" +
+                                            member.Mail + "' , Phone =  '" + member.Phone +
+                                            "' , Picture =  '" + member.Picture + "'  where Id  = " + member.Id + "; ");
+            cnx.executeCommand(cmd);
         }
 
-        public void delete(Member member)
+        public void delete(String id)
         {
-            //SqlCommand cmd = new SqlCommand("delete from  client  where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
+            SqlCommand cmd = new SqlCommand("delete from  Member  where id = " + id + "; ");
+            cnx.executeCommand(cmd);
         }
 
         public void load()
@@ -60,8 +60,8 @@ namespace Controller
                 member.Age = (int)reader.GetValue(3);
                 member.Mail = (String)reader.GetValue(4);
                 member.Phone = (int)reader.GetValue(5);
-                member.Picture = (byte[])reader.GetValue(6);
-
+                member.Picture = (int)reader.GetValue(6);
+                member.Id = (int)reader.GetValue(0);
                 memADOList.Add(member);
             }
 

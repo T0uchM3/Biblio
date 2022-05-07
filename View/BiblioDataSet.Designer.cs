@@ -580,7 +580,7 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MemberRow AddMemberRow(string Name, System.DateTime Since, string Mail, int Age, int Phone, byte[] Picture) {
+            public MemberRow AddMemberRow(string Name, System.DateTime Since, string Mail, int Age, int Phone,int Picture) {
                 MemberRow rowMemberRow = ((MemberRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -643,7 +643,7 @@ namespace Biblio {
                 base.Columns.Add(this.columnAge);
                 this.columnPhone = new global::System.Data.DataColumn("Phone", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPhone);
-                this.columnPicture = new global::System.Data.DataColumn("Picture", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnPicture = new global::System.Data.DataColumn("Picture", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPicture);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
@@ -2087,10 +2087,10 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte[] Picture {
+            public int Picture {
                 get {
                     try {
-                        return ((byte[])(this[this.tableMember.PictureColumn]));
+                        return ((int)(this[this.tableMember.PictureColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Picture\' in table \'Member\' is DBNull.", e);
@@ -2915,7 +2915,7 @@ SELECT Id, Name, Since, Mail, Age, Phone, Picture FROM Member WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, System.DateTime Since, string Mail, int Age, global::System.Nullable<int> Phone, byte[] Picture) {
+        public virtual int Insert(string Name, System.DateTime Since, string Mail, int Age, global::System.Nullable<int> Phone, global::System.Nullable<int> Picture) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -2940,7 +2940,7 @@ SELECT Id, Name, Since, Mail, Age, Phone, Picture FROM Member WHERE (Id = @Id)";
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((byte[])(Picture));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Picture));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2962,7 +2962,7 @@ SELECT Id, Name, Since, Mail, Age, Phone, Picture FROM Member WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, System.DateTime Since, string Mail, int Age, global::System.Nullable<int> Phone, byte[] Picture, int Original_Id, string Original_Name, System.DateTime Original_Since, string Original_Mail, int Original_Age, global::System.Nullable<int> Original_Phone, int Id) {
+        public virtual int Update(string Name, System.DateTime Since, string Mail, int Age, global::System.Nullable<int> Phone, global::System.Nullable<int> Picture, int Original_Id, string Original_Name, System.DateTime Original_Since, string Original_Mail, int Original_Age, global::System.Nullable<int> Original_Phone, int Id) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -2983,11 +2983,11 @@ SELECT Id, Name, Since, Mail, Age, Phone, Picture FROM Member WHERE (Id = @Id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Picture == null)) {
+            if ((Picture.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(Picture));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Picture));
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
@@ -3035,7 +3035,7 @@ SELECT Id, Name, Since, Mail, Age, Phone, Picture FROM Member WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, System.DateTime Since, string Mail, int Age, global::System.Nullable<int> Phone, byte[] Picture, int Original_Id, string Original_Name, System.DateTime Original_Since, string Original_Mail, int Original_Age, global::System.Nullable<int> Original_Phone) {
+        public virtual int Update(string Name, System.DateTime Since, string Mail, int Age, global::System.Nullable<int> Phone, global::System.Nullable<int> Picture, int Original_Id, string Original_Name, System.DateTime Original_Since, string Original_Mail, int Original_Age, global::System.Nullable<int> Original_Phone) {
             return this.Update(Name, Since, Mail, Age, Phone, Picture, Original_Id, Original_Name, Original_Since, Original_Mail, Original_Age, Original_Phone, Original_Id);
         }
     }

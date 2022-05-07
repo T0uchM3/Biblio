@@ -11,6 +11,7 @@ namespace Model
         private String name;
         private int age;
         private DateTime visitDay;
+        private int id;
 
         public string Name
         {
@@ -28,6 +29,12 @@ namespace Model
         {
             get => visitDay;
             set => visitDay = value;
+        }
+
+        public int Id
+        {
+            get => id;
+            set => id = value;
         }
     }
 }

@@ -13,7 +13,8 @@ namespace Model
         private int age;
         private String mail;
         private int phone;
-        byte[] picture;
+        int picture;
+        private int id;
 
         public string Name
         {
@@ -45,10 +46,16 @@ namespace Model
             set => phone = value;
         }
 
-        public byte[] Picture
+        public int Picture
         {
             get => picture;
             set => picture = value;
+        }
+
+        public int Id
+        {
+            get => id;
+            set => id = value;
         }
     }
 }
