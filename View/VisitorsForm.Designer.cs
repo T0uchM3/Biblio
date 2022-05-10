@@ -53,12 +53,10 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tabHolderRight = new System.Windows.Forms.TableLayoutPanel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.biblioDataSet = new Biblio.BiblioDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.leftSide = new System.Windows.Forms.TableLayoutPanel();
             this.tabHolder = new System.Windows.Forms.TableLayoutPanel();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,18 +72,18 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.visName = new Biblio.RoundTf();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.visitorTableAdapter = new Biblio.BiblioDataSetTableAdapters.VisitorTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.biblioDataSet = new Biblio.BiblioDataSet();
+            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.memberTableAdapter = new Biblio.BiblioDataSetTableAdapters.MemberTableAdapter();
+            this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.visitorTableAdapter = new Biblio.BiblioDataSetTableAdapters.VisitorTableAdapter();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSince = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPicture = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.biblioDataSet1 = new Biblio.BiblioDataSet();
-            this.memberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.memberTableAdapter = new Biblio.BiblioDataSetTableAdapters.MemberTableAdapter();
             this.aboveForm.SuspendLayout();
             this.rightSideRoot.SuspendLayout();
             this.rightSide.SuspendLayout();
@@ -100,20 +98,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.memPic)).BeginInit();
             this.tabHolderRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.leftSide.SuspendLayout();
             this.tabHolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visAge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // aboveForm
@@ -230,7 +227,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.11407F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.885932F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel5.Controls.Add(this.memMail, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.labelControl8, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.memPhone, 2, 1);
@@ -258,7 +255,7 @@
             this.memMail.Properties.AutoHeight = false;
             this.memMail.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.memMail.Properties.NullText = "Maill here...";
-            this.memMail.Size = new System.Drawing.Size(235, 22);
+            this.memMail.Size = new System.Drawing.Size(234, 22);
             this.memMail.TabIndex = 1;
             // 
             // labelControl8
@@ -270,14 +267,14 @@
             this.labelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl8.Location = new System.Drawing.Point(3, 3);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(235, 21);
+            this.labelControl8.Size = new System.Drawing.Size(234, 21);
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "Mail";
             // 
             // memPhone
             // 
             this.memPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memPhone.Location = new System.Drawing.Point(270, 30);
+            this.memPhone.Location = new System.Drawing.Point(269, 30);
             this.memPhone.Name = "memPhone";
             this.memPhone.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
             this.memPhone.Properties.Appearance.Options.UseBackColor = true;
@@ -286,7 +283,7 @@
             this.memPhone.Properties.AutoHeight = false;
             this.memPhone.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.memPhone.Properties.NullText = "Phone number here..";
-            this.memPhone.Size = new System.Drawing.Size(205, 22);
+            this.memPhone.Size = new System.Drawing.Size(206, 22);
             this.memPhone.TabIndex = 6;
             // 
             // labelControl3
@@ -296,9 +293,9 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl3.Location = new System.Drawing.Point(270, 3);
+            this.labelControl3.Location = new System.Drawing.Point(269, 3);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(205, 21);
+            this.labelControl3.Size = new System.Drawing.Size(206, 21);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Phone";
             // 
@@ -309,7 +306,7 @@
             this.labelControl9.Appearance.Options.UseTextOptions = true;
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl9.Location = new System.Drawing.Point(244, 3);
+            this.labelControl9.Location = new System.Drawing.Point(243, 3);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(20, 21);
             this.labelControl9.TabIndex = 7;
@@ -464,11 +461,6 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // biblioDataSet
-            // 
-            this.biblioDataSet.DataSetName = "BiblioDataSet";
-            this.biblioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // gridView1
             // 
             this.gridView1.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
@@ -482,8 +474,7 @@
             this.colSince,
             this.colMail,
             this.colAge,
-            this.colPhone,
-            this.colPicture});
+            this.colPhone});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             this.gridView1.Name = "gridView1";
@@ -536,11 +527,6 @@
             this.gridControl2.TabIndex = 10;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
-            // 
-            // visitorBindingSource
-            // 
-            this.visitorBindingSource.DataMember = "Visitor";
-            this.visitorBindingSource.DataSource = this.biblioDataSet;
             // 
             // gridView2
             // 
@@ -746,6 +732,25 @@
             this.labelControl6.TabIndex = 2;
             this.labelControl6.Text = "Name";
             // 
+            // biblioDataSet
+            // 
+            this.biblioDataSet.DataSetName = "BiblioDataSet";
+            this.biblioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // memberBindingSource
+            // 
+            this.memberBindingSource.DataMember = "Member";
+            this.memberBindingSource.DataSource = this.biblioDataSet;
+            // 
+            // memberTableAdapter
+            // 
+            this.memberTableAdapter.ClearBeforeFill = true;
+            // 
+            // visitorBindingSource
+            // 
+            this.visitorBindingSource.DataMember = "Visitor";
+            this.visitorBindingSource.DataSource = this.biblioDataSet;
+            // 
             // visitorTableAdapter
             // 
             this.visitorTableAdapter.ClearBeforeFill = true;
@@ -792,27 +797,6 @@
             this.colPhone.Visible = true;
             this.colPhone.VisibleIndex = 5;
             // 
-            // colPicture
-            // 
-            this.colPicture.FieldName = "Picture";
-            this.colPicture.Name = "colPicture";
-            this.colPicture.Visible = true;
-            this.colPicture.VisibleIndex = 6;
-            // 
-            // biblioDataSet1
-            // 
-            this.biblioDataSet1.DataSetName = "BiblioDataSet";
-            this.biblioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // memberBindingSource
-            // 
-            this.memberBindingSource.DataMember = "Member";
-            this.memberBindingSource.DataSource = this.biblioDataSet1;
-            // 
-            // memberTableAdapter
-            // 
-            this.memberTableAdapter.ClearBeforeFill = true;
-            // 
             // VisitorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -841,12 +825,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.memPic)).EndInit();
             this.tabHolderRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.leftSide.ResumeLayout(false);
             this.tabHolder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -855,8 +837,9 @@
             this.tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visAge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -864,9 +847,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel aboveForm;
-        private BiblioDataSet biblioDataSet;
-        private System.Windows.Forms.BindingSource visitorBindingSource;
-        private BiblioDataSetTableAdapters.VisitorTableAdapter visitorTableAdapter;
         private System.Windows.Forms.TableLayoutPanel leftSide;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button makeMem;
@@ -883,7 +863,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colName1;
         private DevExpress.XtraGrid.Columns.GridColumn colAge1;
         private DevExpress.XtraGrid.Columns.GridColumn colVisitDay;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TableLayoutPanel tabHolder;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel rightSideRoot;
@@ -909,15 +888,17 @@
         private System.Windows.Forms.TableLayoutPanel tabHolderRight;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private BiblioDataSet biblioDataSet;
+        private System.Windows.Forms.BindingSource memberBindingSource;
+        private BiblioDataSetTableAdapters.MemberTableAdapter memberTableAdapter;
+        private System.Windows.Forms.BindingSource visitorBindingSource;
+        private BiblioDataSetTableAdapters.VisitorTableAdapter visitorTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSince;
         private DevExpress.XtraGrid.Columns.GridColumn colMail;
         private DevExpress.XtraGrid.Columns.GridColumn colAge;
         private DevExpress.XtraGrid.Columns.GridColumn colPhone;
-        private DevExpress.XtraGrid.Columns.GridColumn colPicture;
-        private BiblioDataSet biblioDataSet1;
-        private System.Windows.Forms.BindingSource memberBindingSource;
-        private BiblioDataSetTableAdapters.MemberTableAdapter memberTableAdapter;
     }
 }

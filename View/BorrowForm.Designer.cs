@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement3 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement1 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,14 +58,14 @@
             this.borrowGridControl = new DevExpress.XtraGrid.GridControl();
             this.borrowBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.memberTableAdapter = new Biblio.BiblioDataSetTableAdapters.MemberTableAdapter();
+            this.bookTableAdapter = new Biblio.BiblioDataSetTableAdapters.BookTableAdapter();
+            this.borrowTableAdapter = new Biblio.BiblioDataSetTableAdapters.BorrowTableAdapter();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLibID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMemID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBookID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.memberTableAdapter = new Biblio.BiblioDataSetTableAdapters.MemberTableAdapter();
-            this.bookTableAdapter = new Biblio.BiblioDataSetTableAdapters.BookTableAdapter();
-            this.borrowTableAdapter = new Biblio.BiblioDataSetTableAdapters.BorrowTableAdapter();
+            this.colDueDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,7 +94,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.66994F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.33006F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 229F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -115,12 +115,12 @@
             this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.labelControl2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(557, 13);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(556, 13);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(224, 211);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(225, 211);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel2
@@ -129,7 +129,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 153);
+            this.panel2.Size = new System.Drawing.Size(219, 153);
             this.panel2.TabIndex = 8;
             // 
             // memberLB
@@ -145,31 +145,31 @@
             this.memberLB.ItemHeight = 30;
             this.memberLB.Location = new System.Drawing.Point(4, 4);
             this.memberLB.Name = "memberLB";
-            this.memberLB.Size = new System.Drawing.Size(230, 144);
+            this.memberLB.Size = new System.Drawing.Size(231, 144);
             this.memberLB.TabIndex = 9;
-            tableColumnDefinition4.Length.Value = 89D;
-            tableColumnDefinition5.Length.Value = 4D;
-            tableColumnDefinition6.Length.Value = 75D;
-            itemTemplateBase2.Columns.Add(tableColumnDefinition4);
-            itemTemplateBase2.Columns.Add(tableColumnDefinition5);
-            itemTemplateBase2.Columns.Add(tableColumnDefinition6);
-            templatedItemElement3.ColumnIndex = 2;
-            templatedItemElement3.FieldName = "Id";
-            templatedItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement3.Text = "Id";
-            templatedItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            templatedItemElement4.FieldName = "";
-            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement4.Text = "#";
-            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
-            itemTemplateBase2.Elements.Add(templatedItemElement3);
-            itemTemplateBase2.Elements.Add(templatedItemElement4);
-            itemTemplateBase2.Name = "template1";
-            tableRowDefinition2.Length.Value = 15D;
-            itemTemplateBase2.Rows.Add(tableRowDefinition2);
-            this.memberLB.Templates.Add(itemTemplateBase2);
+            tableColumnDefinition1.Length.Value = 89D;
+            tableColumnDefinition2.Length.Value = 4D;
+            tableColumnDefinition3.Length.Value = 75D;
+            itemTemplateBase1.Columns.Add(tableColumnDefinition1);
+            itemTemplateBase1.Columns.Add(tableColumnDefinition2);
+            itemTemplateBase1.Columns.Add(tableColumnDefinition3);
+            templatedItemElement1.ColumnIndex = 2;
+            templatedItemElement1.FieldName = "Id";
+            templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement1.Text = "Id";
+            templatedItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            templatedItemElement2.FieldName = "";
+            templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement2.Text = "#";
+            templatedItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            itemTemplateBase1.Elements.Add(templatedItemElement1);
+            itemTemplateBase1.Elements.Add(templatedItemElement2);
+            itemTemplateBase1.Name = "template1";
+            tableRowDefinition1.Length.Value = 15D;
+            itemTemplateBase1.Rows.Add(tableRowDefinition1);
+            this.memberLB.Templates.Add(itemTemplateBase1);
             // 
             // memberBindingSource
             // 
@@ -191,7 +191,7 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl2.Location = new System.Drawing.Point(3, 3);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(218, 46);
+            this.labelControl2.Size = new System.Drawing.Size(219, 46);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Member Id";
             // 
@@ -202,7 +202,7 @@
             this.tableLayoutPanel4.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.labelControl3, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(175, 13);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(174, 13);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
@@ -262,7 +262,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lendBtn, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.dueDate, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(335, 13);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(334, 13);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
@@ -319,7 +319,7 @@
             this.previewCover.Dock = System.Windows.Forms.DockStyle.Fill;
             this.previewCover.Location = new System.Drawing.Point(3, 13);
             this.previewCover.Name = "previewCover";
-            this.previewCover.Size = new System.Drawing.Size(166, 211);
+            this.previewCover.Size = new System.Drawing.Size(165, 211);
             this.previewCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.previewCover.TabIndex = 5;
             this.previewCover.TabStop = false;
@@ -427,55 +427,15 @@
             this.colLibID,
             this.colMemID,
             this.colBookID,
-            this.colDate});
+            this.colDueDate});
             this.gridView1.GridControl = this.borrowGridControl;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.ScrollStyle = DevExpress.XtraGrid.Views.Grid.ScrollStyleFlags.None;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colBookID, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             this.gridView1.CustomDrawColumnHeader += new DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventHandler(this.gridView1_CustomDrawColumnHeader);
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.OptionsColumn.ReadOnly = true;
-            // 
-            // colLibID
-            // 
-            this.colLibID.FieldName = "LibID";
-            this.colLibID.Name = "colLibID";
-            this.colLibID.OptionsColumn.ReadOnly = true;
-            this.colLibID.Visible = true;
-            this.colLibID.VisibleIndex = 3;
-            // 
-            // colMemID
-            // 
-            this.colMemID.FieldName = "MemID";
-            this.colMemID.Name = "colMemID";
-            this.colMemID.OptionsColumn.ReadOnly = true;
-            this.colMemID.Visible = true;
-            this.colMemID.VisibleIndex = 1;
-            // 
-            // colBookID
-            // 
-            this.colBookID.FieldName = "BookID";
-            this.colBookID.Name = "colBookID";
-            this.colBookID.OptionsColumn.ReadOnly = true;
-            this.colBookID.Visible = true;
-            this.colBookID.VisibleIndex = 0;
-            // 
-            // colDate
-            // 
-            this.colDate.FieldName = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.OptionsColumn.ReadOnly = true;
-            this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 2;
             // 
             // memberTableAdapter
             // 
@@ -488,6 +448,41 @@
             // borrowTableAdapter
             // 
             this.borrowTableAdapter.ClearBeforeFill = true;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colLibID
+            // 
+            this.colLibID.FieldName = "LibID";
+            this.colLibID.Name = "colLibID";
+            this.colLibID.Visible = true;
+            this.colLibID.VisibleIndex = 1;
+            // 
+            // colMemID
+            // 
+            this.colMemID.FieldName = "MemID";
+            this.colMemID.Name = "colMemID";
+            this.colMemID.Visible = true;
+            this.colMemID.VisibleIndex = 2;
+            // 
+            // colBookID
+            // 
+            this.colBookID.FieldName = "BookID";
+            this.colBookID.Name = "colBookID";
+            this.colBookID.Visible = true;
+            this.colBookID.VisibleIndex = 3;
+            // 
+            // colDueDate
+            // 
+            this.colDueDate.FieldName = "DueDate";
+            this.colDueDate.Name = "colDueDate";
+            this.colDueDate.Visible = true;
+            this.colDueDate.VisibleIndex = 4;
             // 
             // BorrowForm
             // 
@@ -536,11 +531,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private DevExpress.XtraGrid.GridControl borrowGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colLibID;
-        private DevExpress.XtraGrid.Columns.GridColumn colMemID;
-        private DevExpress.XtraGrid.Columns.GridColumn colBookID;
-        private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private BiblioDataSetTableAdapters.MemberTableAdapter memberTableAdapter;
         private System.Windows.Forms.Button lendBtn;
@@ -557,5 +547,10 @@
         private System.Windows.Forms.BindingSource borrowBindingSource;
         private BiblioDataSetTableAdapters.BorrowTableAdapter borrowTableAdapter;
         private System.Windows.Forms.PictureBox previewCover;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colLibID;
+        private DevExpress.XtraGrid.Columns.GridColumn colMemID;
+        private DevExpress.XtraGrid.Columns.GridColumn colBookID;
+        private DevExpress.XtraGrid.Columns.GridColumn colDueDate;
     }
 }

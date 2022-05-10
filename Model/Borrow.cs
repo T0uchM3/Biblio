@@ -12,6 +12,7 @@ namespace Model
         private int memId;
         private int bookId;
         private DateTime date;
+        private DateTime dueDate;
 
         public int LibId
         {
@@ -35,6 +36,12 @@ namespace Model
         {
             get => date;
             set => date = value;
+        }
+
+        public DateTime DueDate
+        {
+            get => dueDate;
+            set => dueDate = value;
         }
     }
 }

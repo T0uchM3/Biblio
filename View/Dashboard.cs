@@ -24,6 +24,8 @@ namespace Biblio
         {
             // TODO: This line of code loads data into the 'biblioDataSet.Visitor' table. You can move, or remove it, as needed.
             this.visitorTableAdapter.Fill(this.biblioDataSet.Visitor);
+            // TODO: This line of code loads data into the 'biblioDataSet1.combo' table. You can move, or remove it, as needed.
+            this.comboTableAdapter.Fill(this.biblioDataSet1.combo);
         }
     }
 }

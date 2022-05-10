@@ -29,58 +29,47 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView1 = new DevExpress.XtraCharts.DoughnutSeriesView();
-            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView2 = new DevExpress.XtraCharts.DoughnutSeriesView();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.aboveTop = new System.Windows.Forms.TableLayoutPanel();
             this.rightSide = new System.Windows.Forms.TableLayoutPanel();
             this.leftSide = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.customPanel3 = new Biblio.CustomPanel();
-            this.customPanel2 = new Biblio.CustomPanel();
-            this.customPanel1 = new Biblio.CustomPanel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.comboBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.biblioDataSet1 = new Biblio.BiblioDataSet1();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.customPanel3 = new Biblio.CustomPanel();
+            this.customPanel2 = new Biblio.CustomPanel();
+            this.customPanel1 = new Biblio.CustomPanel();
+            this.comboTableAdapter = new Biblio.BiblioDataSet1TableAdapters.comboTableAdapter();
             this.biblioDataSet = new Biblio.BiblioDataSet();
             this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visitorTableAdapter = new Biblio.BiblioDataSetTableAdapters.VisitorTableAdapter();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.aboveTop.SuspendLayout();
             this.leftSide.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView2)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // aboveTop
@@ -128,7 +117,7 @@
             this.leftSide.RowCount = 3;
             this.leftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.76923F));
             this.leftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.23077F));
-            this.leftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.leftSide.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 181F));
             this.leftSide.Size = new System.Drawing.Size(706, 444);
             this.leftSide.TabIndex = 1;
             // 
@@ -143,73 +132,21 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.05882F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.94118F));
-            this.tableLayoutPanel1.Controls.Add(this.chartControl1, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.98033F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.01967F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.chart1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 44);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(661, 213);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(661, 210);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // chartControl1
-            // 
-            this.chartControl1.DataSource = this.visitorBindingSource;
-            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram1;
-            this.chartControl1.Location = new System.Drawing.Point(314, 3);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesDataMember = "Age";
-            series1.ArgumentDataMember = "Age";
-            series1.Name = "Series 1";
-            series1.ValueDataMembersSerializable = "Age";
-            series2.ArgumentDataMember = "Age";
-            series2.Name = "Series 2";
-            series2.ValueDataMembersSerializable = "Age";
-            series3.ArgumentDataMember = "Age";
-            series3.Name = "Series 3";
-            series3.ValueDataMembersSerializable = "Age";
-            series4.ArgumentDataMember = "Age";
-            series4.Name = "Series 1";
-            series4.ValueDataMembersSerializable = "Age";
-            series5.ArgumentDataMember = "Age";
-            series5.Name = "Series 2";
-            series5.ValueDataMembersSerializable = "Age";
-            series5.Visible = false;
-            series6.ArgumentDataMember = "Age";
-            series6.Name = "Series 3";
-            series6.ValueDataMembersSerializable = "Age";
-            series6.Visible = false;
-            series7.Name = "Series 1";
-            series7.Visible = false;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1,
-        series2,
-        series3,
-        series1,
-        series2,
-        series3,
-        series4,
-        series5,
-        series6,
-        series7};
-            this.chartControl1.SeriesTemplate.ArgumentDataMember = "Age";
-            this.chartControl1.SeriesTemplate.SeriesDataMember = "Age";
-            this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Age";
-            this.chartControl1.Size = new System.Drawing.Size(330, 199);
-            this.chartControl1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.customPanel3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.customPanel2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.customPanel1, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -218,6 +155,112 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 146);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // chart1
+            // 
+            chartArea1.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelAutoFitStyle = System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30;
+            chartArea1.AxisX.LabelStyle.Angle = 40;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            chartArea1.AxisX.LabelStyle.Format = "ddd M";
+            chartArea1.AxisX.LabelStyle.Interval = 0D;
+            chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea1.AxisX.LineWidth = 0;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.ScaleView.Size = 6D;
+            chartArea1.AxisX.ScrollBar.Enabled = false;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX2.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            chartArea1.AxisX2.LabelStyle.Format = "ddd M";
+            chartArea1.AxisX2.LabelStyle.Interval = 0D;
+            chartArea1.AxisX2.ScaleView.Size = 6D;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            chartArea1.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea1.AxisY.LineWidth = 0;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.AxisY2.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
+            chartArea1.BackColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.DataSource = this.comboBindingSource;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(221, 3);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.CustomProperties = "PixelPointWidth=8";
+            series1.Legend = "Legend1";
+            series1.Name = "Visitors";
+            series1.XValueMember = "VisitDay";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series1.YValueMembers = "Expr1";
+            series2.ChartArea = "ChartArea1";
+            series2.CustomProperties = "PixelPointWidth=8";
+            series2.Legend = "Legend1";
+            series2.Name = "Borrower";
+            series2.XValueMember = "Date";
+            series2.YValueMembers = "Expr2";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(421, 204);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
+            // 
+            // comboBindingSource
+            // 
+            this.comboBindingSource.DataMember = "combo";
+            this.comboBindingSource.DataSource = this.biblioDataSet1;
+            // 
+            // biblioDataSet1
+            // 
+            this.biblioDataSet1.DataSetName = "BiblioDataSet1";
+            this.biblioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.43791F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.56209F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.chart2, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 265);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(610, 163);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.gridControl1, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.10309F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.8969F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(368, 121);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(3, 27);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(362, 91);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // customPanel3
             // 
@@ -243,65 +286,9 @@
             this.customPanel1.Size = new System.Drawing.Size(194, 41);
             this.customPanel1.TabIndex = 1;
             // 
-            // tableLayoutPanel3
+            // comboTableAdapter
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.43791F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.56209F));
-            this.tableLayoutPanel3.Controls.Add(this.chartControl2, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 263);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(610, 178);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // chartControl2
-            // 
-            this.chartControl2.DataSource = this.biblioDataSet.Member;
-            this.chartControl2.Legend.MarkerSize = new System.Drawing.Size(12, 10);
-            this.chartControl2.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartControl2.Location = new System.Drawing.Point(377, 3);
-            this.chartControl2.Name = "chartControl2";
-            series8.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
-            series8.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series8.Name = "Series 1";
-            series8.View = doughnutSeriesView1;
-            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series8};
-            this.chartControl2.SeriesTemplate.View = doughnutSeriesView2;
-            this.chartControl2.Size = new System.Drawing.Size(171, 172);
-            this.chartControl2.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.gridControl1, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.10309F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.8969F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(368, 172);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(3, 37);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(362, 132);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.comboTableAdapter.ClearBeforeFill = true;
             // 
             // biblioDataSet
             // 
@@ -317,6 +304,27 @@
             // 
             this.visitorTableAdapter.ClearBeforeFill = true;
             // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            this.chart2.DataSource = this.visitorBindingSource;
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(377, 3);
+            this.chart2.Name = "chart2";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.XValueMember = "Age";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series3.YValueMembers = "Id";
+            this.chart2.Series.Add(series3);
+            this.chart2.Size = new System.Drawing.Size(230, 157);
+            this.chart2.TabIndex = 3;
+            this.chart2.Text = "chart2";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,26 +339,16 @@
             this.leftSide.ResumeLayout(false);
             this.leftSide.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,18 +360,21 @@
         private System.Windows.Forms.TableLayoutPanel leftSide;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private CustomPanel customPanel3;
         private CustomPanel customPanel2;
         private CustomPanel customPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private DevExpress.XtraCharts.ChartControl chartControl2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private BiblioDataSet1 biblioDataSet1;
+        private System.Windows.Forms.BindingSource comboBindingSource;
+        private BiblioDataSet1TableAdapters.comboTableAdapter comboTableAdapter;
         private BiblioDataSet biblioDataSet;
         private System.Windows.Forms.BindingSource visitorBindingSource;
         private BiblioDataSetTableAdapters.VisitorTableAdapter visitorTableAdapter;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BiblioDataSet1" targetNamespace="http://tempuri.org/BiblioDataSet1.xsd" xmlns:mstns="http://tempuri.org/BiblioDataSet1.xsd" xmlns="http://tempuri.org/BiblioDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BiblioConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BiblioConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Biblio.Properties.Settings.GlobalReference.Default.BiblioConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BorrowCountTableAdapter" GeneratorDataComponentClassName="BorrowCountTableAdapter" Name="BorrowCount" UserDataComponentName="BorrowCountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioConnectionString (Settings)" DbObjectName="Biblio.dbo.BorrowCount" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Date, Expr2 FROM dbo.BorrowCount</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="comboTableAdapter" GeneratorDataComponentClassName="comboTableAdapter" Name="combo" UserDataComponentName="comboTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioConnectionString (Settings)" DbObjectName="Biblio.dbo.combo" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Date, Expr2, VisitDay, Expr1 FROM dbo.combo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="VisitDay" DataSetColumn="VisitDay" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VisitorCountTableAdapter" GeneratorDataComponentClassName="VisitorCountTableAdapter" Name="VisitorCount" UserDataComponentName="VisitorCountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioConnectionString (Settings)" DbObjectName="Biblio.dbo.VisitorCount" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT VisitDay, Expr1 FROM dbo.VisitorCount</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="VisitDay" DataSetColumn="VisitDay" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BiblioDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="BiblioDataSet1" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BiblioDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BorrowCount" msprop:Generator_RowClassName="BorrowCountRow" msprop:Generator_RowEvHandlerName="BorrowCountRowChangeEventHandler" msprop:Generator_RowDeletedName="BorrowCountRowDeleted" msprop:Generator_RowDeletingName="BorrowCountRowDeleting" msprop:Generator_RowEvArgName="BorrowCountRowChangeEvent" msprop:Generator_TablePropName="BorrowCount" msprop:Generator_RowChangedName="BorrowCountRowChanged" msprop:Generator_UserTableName="BorrowCount" msprop:Generator_RowChangingName="BorrowCountRowChanging" msprop:Generator_TableClassName="BorrowCountDataTable" msprop:Generator_TableVarName="tableBorrowCount">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" />
+              <xs:element name="Expr2" msprop:Generator_UserColumnName="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="combo" msprop:Generator_RowClassName="comboRow" msprop:Generator_RowEvHandlerName="comboRowChangeEventHandler" msprop:Generator_RowDeletedName="comboRowDeleted" msprop:Generator_RowDeletingName="comboRowDeleting" msprop:Generator_RowEvArgName="comboRowChangeEvent" msprop:Generator_TablePropName="combo" msprop:Generator_RowChangedName="comboRowChanged" msprop:Generator_UserTableName="combo" msprop:Generator_RowChangingName="comboRowChanging" msprop:Generator_TableClassName="comboDataTable" msprop:Generator_TableVarName="tablecombo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" />
+              <xs:element name="Expr2" msprop:Generator_UserColumnName="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" type="xs:int" minOccurs="0" />
+              <xs:element name="VisitDay" msprop:Generator_UserColumnName="VisitDay" msprop:Generator_ColumnPropNameInTable="VisitDayColumn" msprop:Generator_ColumnPropNameInRow="VisitDay" msprop:Generator_ColumnVarNameInTable="columnVisitDay" type="xs:dateTime" />
+              <xs:element name="Expr1" msprop:Generator_UserColumnName="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VisitorCount" msprop:Generator_RowClassName="VisitorCountRow" msprop:Generator_RowEvHandlerName="VisitorCountRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorCountRowDeleted" msprop:Generator_RowDeletingName="VisitorCountRowDeleting" msprop:Generator_RowEvArgName="VisitorCountRowChangeEvent" msprop:Generator_TablePropName="VisitorCount" msprop:Generator_RowChangedName="VisitorCountRowChanged" msprop:Generator_UserTableName="VisitorCount" msprop:Generator_RowChangingName="VisitorCountRowChanging" msprop:Generator_TableClassName="VisitorCountDataTable" msprop:Generator_TableVarName="tableVisitorCount">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VisitDay" msprop:Generator_UserColumnName="VisitDay" msprop:Generator_ColumnPropNameInTable="VisitDayColumn" msprop:Generator_ColumnPropNameInRow="VisitDay" msprop:Generator_ColumnVarNameInTable="columnVisitDay" type="xs:dateTime" />
+              <xs:element name="Expr1" msprop:Generator_UserColumnName="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

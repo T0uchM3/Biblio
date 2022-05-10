@@ -29,11 +29,10 @@ namespace Biblio
 
         private void VisitorsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'biblioDataSet1.Member' table. You can move, or remove it, as needed.
-            this.memberTableAdapter.Fill(this.biblioDataSet1.Member);
             // TODO: This line of code loads data into the 'biblioDataSet.Visitor' table. You can move, or remove it, as needed.
             this.visitorTableAdapter.Fill(this.biblioDataSet.Visitor);
-
+            // TODO: This line of code loads data into the 'biblioDataSet.Member' table. You can move, or remove it, as needed.
+            this.memberTableAdapter.Fill(this.biblioDataSet.Member);
             //needed to verify if a member exist in Borrow database or not before deleting theme
             BorrowADO bADO = new BorrowADO();
             bADO.load();

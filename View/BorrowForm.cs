@@ -65,9 +65,12 @@ namespace Biblio
             borow.MemId = (Int32.Parse(memberLB.GetItemText(memberLB.SelectedIndex)));
             borow.BookId = (Int32.Parse(bookLB.GetItemValue(bookLB.SelectedIndex).ToString()));
             borow.Date = dueDate.DateTime.Date;
+
+            Console.WriteLine("DAAAATTEEE now:  " + dueDate.DateTime.Date);
+            borow.DueDate = DateTime.Now.Date;
+
             BorrowADO borrowADO = new BorrowADO();
             borrowADO.insert(borow);
-            //Borrow_Load(sender, null);
             loadToRefresh();
         }
 
