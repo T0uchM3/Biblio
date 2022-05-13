@@ -120,10 +120,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BiblioDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BiblioDataSet1.cs">
+      <DependentUpon>BiblioDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BiblioDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BiblioDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BiblioDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblioDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BiblioDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblioDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="BookForm.cs">
       <SubType>Form</SubType>
@@ -215,6 +228,28 @@
     </None>
     <None Include="BiblioDataSet1.xss">
       <DependentUpon>BiblioDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BiblioDataSet2.xsc">
+      <DependentUpon>BiblioDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BiblioDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BiblioDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BiblioDataSet2.xss">
+      <DependentUpon>BiblioDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BiblioDataSet3.xsc">
+      <DependentUpon>BiblioDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BiblioDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BiblioDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BiblioDataSet3.xss">
+      <DependentUpon>BiblioDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -469,6 +504,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\power-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profits %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profits %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profits %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profits %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profits %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profits %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-sign.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

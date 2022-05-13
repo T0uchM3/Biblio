@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BiblioDataSet3" targetNamespace="http://tempuri.org/BiblioDataSet3.xsd" xmlns:mstns="http://tempuri.org/BiblioDataSet3.xsd" xmlns="http://tempuri.org/BiblioDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BiblioConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BiblioConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Biblio.Properties.Settings.GlobalReference.Default.BiblioConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OverdueListTableAdapter" GeneratorDataComponentClassName="OverdueListTableAdapter" Name="OverdueList" UserDataComponentName="OverdueListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioConnectionString (Settings)" DbObjectName="Biblio.dbo.OverdueList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name, Id, Overdue FROM dbo.OverdueList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Overdue" DataSetColumn="Overdue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BiblioDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BiblioDataSet3" msprop:Generator_DataSetName="BiblioDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OverdueList" msprop:Generator_RowEvHandlerName="OverdueListRowChangeEventHandler" msprop:Generator_RowDeletedName="OverdueListRowDeleted" msprop:Generator_RowDeletingName="OverdueListRowDeleting" msprop:Generator_RowEvArgName="OverdueListRowChangeEvent" msprop:Generator_TablePropName="OverdueList" msprop:Generator_RowChangedName="OverdueListRowChanged" msprop:Generator_RowChangingName="OverdueListRowChanging" msprop:Generator_TableClassName="OverdueListDataTable" msprop:Generator_RowClassName="OverdueListRow" msprop:Generator_TableVarName="tableOverdueList" msprop:Generator_UserTableName="OverdueList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Overdue" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Overdue" msprop:Generator_ColumnPropNameInTable="OverdueColumn" msprop:Generator_ColumnVarNameInTable="columnOverdue" msprop:Generator_UserColumnName="Overdue" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OverdueList" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

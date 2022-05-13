@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BiblioDataSet2" targetNamespace="http://tempuri.org/BiblioDataSet2.xsd" xmlns:mstns="http://tempuri.org/BiblioDataSet2.xsd" xmlns="http://tempuri.org/BiblioDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BiblioConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BiblioConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Biblio.Properties.Settings.GlobalReference.Default.BiblioConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FINALVIEWTableAdapter" GeneratorDataComponentClassName="FINALVIEWTableAdapter" Name="FINALVIEW" UserDataComponentName="FINALVIEWTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioConnectionString (Settings)" DbObjectName="Biblio.dbo.FINALVIEW" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT B11A21, B11score, B11PER, col1 FROM FINALVIEW</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="B11A21" DataSetColumn="B11A21" />
+              <Mapping SourceColumn="B11score" DataSetColumn="B11score" />
+              <Mapping SourceColumn="B11PER" DataSetColumn="B11PER" />
+              <Mapping SourceColumn="col1" DataSetColumn="col1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BorrowStatusTableAdapter" GeneratorDataComponentClassName="BorrowStatusTableAdapter" Name="BorrowStatus" UserDataComponentName="BorrowStatusTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BiblioConnectionString (Settings)" DbObjectName="Biblio.dbo.BorrowStatus" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT borrowYesterday, borrowBeforeYesterday, totalBorrows, visitisYesterday, visitisBeforeYesterday, totalVisits, totalOverdue, overdueYesterday, overdueBeforeYesterday FROM dbo.BorrowStatus</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="borrowYesterday" DataSetColumn="borrowYesterday" />
+              <Mapping SourceColumn="borrowBeforeYesterday" DataSetColumn="borrowBeforeYesterday" />
+              <Mapping SourceColumn="totalBorrows" DataSetColumn="totalBorrows" />
+              <Mapping SourceColumn="visitisYesterday" DataSetColumn="visitisYesterday" />
+              <Mapping SourceColumn="visitisBeforeYesterday" DataSetColumn="visitisBeforeYesterday" />
+              <Mapping SourceColumn="totalVisits" DataSetColumn="totalVisits" />
+              <Mapping SourceColumn="totalOverdue" DataSetColumn="totalOverdue" />
+              <Mapping SourceColumn="overdueYesterday" DataSetColumn="overdueYesterday" />
+              <Mapping SourceColumn="overdueBeforeYesterday" DataSetColumn="overdueBeforeYesterday" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BiblioDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="BiblioDataSet2" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BiblioDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FINALVIEW" msprop:Generator_RowEvHandlerName="FINALVIEWRowChangeEventHandler" msprop:Generator_RowDeletedName="FINALVIEWRowDeleted" msprop:Generator_RowDeletingName="FINALVIEWRowDeleting" msprop:Generator_RowEvArgName="FINALVIEWRowChangeEvent" msprop:Generator_TablePropName="FINALVIEW" msprop:Generator_RowChangedName="FINALVIEWRowChanged" msprop:Generator_UserTableName="FINALVIEW" msprop:Generator_RowChangingName="FINALVIEWRowChanging" msprop:Generator_RowClassName="FINALVIEWRow" msprop:Generator_TableClassName="FINALVIEWDataTable" msprop:Generator_TableVarName="tableFINALVIEW">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="B11A21" msprop:Generator_ColumnPropNameInTable="B11A21Column" msprop:Generator_ColumnPropNameInRow="B11A21" msprop:Generator_UserColumnName="B11A21" msprop:Generator_ColumnVarNameInTable="columnB11A21" type="xs:int" minOccurs="0" />
+              <xs:element name="B11score" msprop:Generator_ColumnPropNameInTable="B11scoreColumn" msprop:Generator_ColumnPropNameInRow="B11score" msprop:Generator_UserColumnName="B11score" msprop:Generator_ColumnVarNameInTable="columnB11score" type="xs:int" minOccurs="0" />
+              <xs:element name="B11PER" msprop:Generator_ColumnPropNameInTable="B11PERColumn" msprop:Generator_ColumnPropNameInRow="B11PER" msprop:Generator_UserColumnName="B11PER" msprop:Generator_ColumnVarNameInTable="columnB11PER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="col1" msprop:Generator_UserColumnName="col1" msprop:Generator_ColumnPropNameInTable="col1Column" msprop:Generator_ColumnPropNameInRow="col1" msprop:Generator_ColumnVarNameInTable="columncol1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BorrowStatus" msprop:Generator_RowEvHandlerName="BorrowStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="BorrowStatusRowDeleted" msprop:Generator_RowDeletingName="BorrowStatusRowDeleting" msprop:Generator_RowEvArgName="BorrowStatusRowChangeEvent" msprop:Generator_TablePropName="BorrowStatus" msprop:Generator_RowChangedName="BorrowStatusRowChanged" msprop:Generator_RowChangingName="BorrowStatusRowChanging" msprop:Generator_TableClassName="BorrowStatusDataTable" msprop:Generator_RowClassName="BorrowStatusRow" msprop:Generator_TableVarName="tableBorrowStatus" msprop:Generator_UserTableName="BorrowStatus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="borrowYesterday" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="borrowYesterday" msprop:Generator_ColumnPropNameInTable="borrowYesterdayColumn" msprop:Generator_ColumnVarNameInTable="columnborrowYesterday" msprop:Generator_UserColumnName="borrowYesterday" type="xs:int" minOccurs="0" />
+              <xs:element name="borrowBeforeYesterday" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="borrowBeforeYesterday" msprop:Generator_ColumnPropNameInTable="borrowBeforeYesterdayColumn" msprop:Generator_ColumnVarNameInTable="columnborrowBeforeYesterday" msprop:Generator_UserColumnName="borrowBeforeYesterday" type="xs:int" minOccurs="0" />
+              <xs:element name="totalBorrows" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="totalBorrows" msprop:Generator_ColumnPropNameInTable="totalBorrowsColumn" msprop:Generator_ColumnVarNameInTable="columntotalBorrows" msprop:Generator_UserColumnName="totalBorrows" type="xs:int" minOccurs="0" />
+              <xs:element name="visitisYesterday" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="visitisYesterday" msprop:Generator_ColumnPropNameInTable="visitisYesterdayColumn" msprop:Generator_ColumnVarNameInTable="columnvisitisYesterday" msprop:Generator_UserColumnName="visitisYesterday" type="xs:int" minOccurs="0" />
+              <xs:element name="visitisBeforeYesterday" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="visitisBeforeYesterday" msprop:Generator_ColumnPropNameInTable="visitisBeforeYesterdayColumn" msprop:Generator_ColumnVarNameInTable="columnvisitisBeforeYesterday" msprop:Generator_UserColumnName="visitisBeforeYesterday" type="xs:int" minOccurs="0" />
+              <xs:element name="totalVisits" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="totalVisits" msprop:Generator_ColumnPropNameInTable="totalVisitsColumn" msprop:Generator_ColumnVarNameInTable="columntotalVisits" msprop:Generator_UserColumnName="totalVisits" type="xs:int" minOccurs="0" />
+              <xs:element name="totalOverdue" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="totalOverdue" msprop:Generator_ColumnPropNameInTable="totalOverdueColumn" msprop:Generator_ColumnVarNameInTable="columntotalOverdue" msprop:Generator_UserColumnName="totalOverdue" type="xs:int" minOccurs="0" />
+              <xs:element name="overdueYesterday" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="overdueYesterday" msprop:Generator_ColumnPropNameInTable="overdueYesterdayColumn" msprop:Generator_ColumnVarNameInTable="columnoverdueYesterday" msprop:Generator_UserColumnName="overdueYesterday" type="xs:int" minOccurs="0" />
+              <xs:element name="overdueBeforeYesterday" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="overdueBeforeYesterday" msprop:Generator_ColumnPropNameInTable="overdueBeforeYesterdayColumn" msprop:Generator_ColumnVarNameInTable="columnoverdueBeforeYesterday" msprop:Generator_UserColumnName="overdueBeforeYesterday" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

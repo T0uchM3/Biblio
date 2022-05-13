@@ -12,6 +12,8 @@ namespace Controller
     public class BorrowADO
     {
         public List<Borrow> borrowADOList = new List<Borrow>();
+        public List<Count> counList = new List<Count>();
+
         Connection cnx = new Connection();
 
         public void insert(Borrow borrow)
@@ -61,6 +63,53 @@ namespace Controller
             }
 
             reader.Close();
+        }
+
+        public void loadCount(int indicator)
+        {
+            SqlDataReader reader = null;
+            borrowADOList = new List<Borrow>();
+            if (indicator == 0)
+            {
+                reader = cnx.SDD("SELECT * FROM VisitorCount");
+            }
+            else
+            {
+                reader = cnx.SDD("SELECT * FROM BorrowCount");
+            }
+
+            while (reader.Read())
+            {
+                Count c = new Count();
+                c.date = (DateTime)reader.GetValue(0);
+                c.count = (int)reader.GetValue(1);
+                counList.Add(c);
+            }
+
+            reader.Close();
+        }
+
+        public Status loadStatus()
+        {
+            SqlDataReader reader = null;
+            borrowADOList = new List<Borrow>();
+            reader = cnx.SDD("SELECT * FROM BorrowStatus");
+            Status s = new Status();
+            while (reader.Read())
+            {
+                s.BorrowYesterday = (int)reader.GetValue(0);
+                s.BorrowBeforeYesterday = (int)reader.GetValue(1);
+                s.TotalBorrow = (int)reader.GetValue(2);
+                s.VisitYesterday = (int)reader.GetValue(3);
+                s.VisitBeforeYesterday = (int)reader.GetValue(4);
+                s.TotalVisit = (int)reader.GetValue(5);
+                s.OverdueYesterday = (int)reader.GetValue(7);
+                s.OverdueBeforeYesterday = (int)reader.GetValue(8);
+                s.TotalOverdue = (int)reader.GetValue(6);
+            }
+
+            reader.Close();
+            return s;
         }
     }
 }

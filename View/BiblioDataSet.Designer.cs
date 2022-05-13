@@ -1389,6 +1389,8 @@ namespace Biblio {
             
             private global::System.Data.DataColumn columnDueDate;
             
+            private global::System.Data.DataColumn columnReturned;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BorrowDataTable() {
@@ -1472,6 +1474,14 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ReturnedColumn {
+                get {
+                    return this.columnReturned;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1507,7 +1517,7 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BorrowRow AddBorrowRow(LibrarianRow parentLibrarianRowByFK_Borrow_Librarian, MemberRow parentMemberRowByFK_Borrow_Member, BookRow parentBookRowByFK_Borrow_Book, System.DateTime Date, System.DateTime DueDate) {
+            public BorrowRow AddBorrowRow(LibrarianRow parentLibrarianRowByFK_Borrow_Librarian, MemberRow parentMemberRowByFK_Borrow_Member, BookRow parentBookRowByFK_Borrow_Book, System.DateTime Date, System.DateTime DueDate, bool Returned) {
                 BorrowRow rowBorrowRow = ((BorrowRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1515,7 +1525,8 @@ namespace Biblio {
                         null,
                         null,
                         Date,
-                        DueDate};
+                        DueDate,
+                        Returned};
                 if ((parentLibrarianRowByFK_Borrow_Librarian != null)) {
                     columnValuesArray[1] = parentLibrarianRowByFK_Borrow_Librarian[0];
                 }
@@ -1560,6 +1571,7 @@ namespace Biblio {
                 this.columnBookID = base.Columns["BookID"];
                 this.columnDate = base.Columns["Date"];
                 this.columnDueDate = base.Columns["DueDate"];
+                this.columnReturned = base.Columns["Returned"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1577,6 +1589,8 @@ namespace Biblio {
                 base.Columns.Add(this.columnDate);
                 this.columnDueDate = new global::System.Data.DataColumn("DueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDueDate);
+                this.columnReturned = new global::System.Data.DataColumn("Returned", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReturned);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1590,6 +1604,7 @@ namespace Biblio {
                 this.columnBookID.AllowDBNull = false;
                 this.columnDate.AllowDBNull = false;
                 this.columnDueDate.AllowDBNull = false;
+                this.columnReturned.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2376,6 +2391,17 @@ namespace Biblio {
                 }
                 set {
                     this[this.tableBorrow.DueDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Returned {
+                get {
+                    return ((bool)(this[this.tableBorrow.ReturnedColumn]));
+                }
+                set {
+                    this[this.tableBorrow.ReturnedColumn] = value;
                 }
             }
             
@@ -3764,12 +3790,14 @@ SELECT Id, Name, Since, Mail, Age, Phone, Picture FROM Member WHERE (Id = @Id)";
             tableMapping.ColumnMappings.Add("BookID", "BookID");
             tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("DueDate", "DueDate");
+            tableMapping.ColumnMappings.Add("Returned", "Returned");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [Borrow] WHERE (([Id] = @Original_Id) AND ([LibID] = @Original_LibID)" +
                 " AND ([MemID] = @Original_MemID) AND ([BookID] = @Original_BookID) AND ([Date] =" +
-                " @Original_Date) AND ([DueDate] = @Original_DueDate))";
+                " @Original_Date) AND ([DueDate] = @Original_DueDate) AND ([Returned] = @Original" +
+                "_Returned))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LibID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LibID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3777,33 +3805,38 @@ SELECT Id, Name, Since, Mail, Age, Phone, Picture FROM Member WHERE (Id = @Id)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BookID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Returned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Borrow] ([LibID], [MemID], [BookID], [Date], [DueDate]) VALUES (@Lib" +
-                "ID, @MemID, @BookID, @Date, @DueDate);\r\nSELECT Id, LibID, MemID, BookID, Date, D" +
-                "ueDate FROM Borrow WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Borrow] ([LibID], [MemID], [BookID], [Date], [DueDate], [Returned]) " +
+                "VALUES (@LibID, @MemID, @BookID, @Date, @DueDate, @Returned);\r\nSELECT Id, LibID," +
+                " MemID, BookID, Date, DueDate, Returned FROM Borrow WHERE (Id = SCOPE_IDENTITY()" +
+                ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LibID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LibID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MemID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Returned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Borrow] SET [LibID] = @LibID, [MemID] = @MemID, [BookID] = @BookID, [Date] = @Date, [DueDate] = @DueDate WHERE (([Id] = @Original_Id) AND ([LibID] = @Original_LibID) AND ([MemID] = @Original_MemID) AND ([BookID] = @Original_BookID) AND ([Date] = @Original_Date) AND ([DueDate] = @Original_DueDate));
-SELECT Id, LibID, MemID, BookID, Date, DueDate FROM Borrow WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Borrow] SET [LibID] = @LibID, [MemID] = @MemID, [BookID] = @BookID, [Date] = @Date, [DueDate] = @DueDate, [Returned] = @Returned WHERE (([Id] = @Original_Id) AND ([LibID] = @Original_LibID) AND ([MemID] = @Original_MemID) AND ([BookID] = @Original_BookID) AND ([Date] = @Original_Date) AND ([DueDate] = @Original_DueDate) AND ([Returned] = @Original_Returned));
+SELECT Id, LibID, MemID, BookID, Date, DueDate, Returned FROM Borrow WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LibID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LibID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MemID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Returned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LibID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LibID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MemID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MemID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BookID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DueDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DueDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Returned", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Returned", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3820,7 +3853,7 @@ SELECT Id, LibID, MemID, BookID, Date, DueDate FROM Borrow WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, LibID, MemID, BookID, Date, DueDate FROM Borrow";
+            this._commandCollection[0].CommandText = "SELECT Id, LibID, MemID, BookID, Date, DueDate, Returned FROM Borrow";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3881,13 +3914,14 @@ SELECT Id, LibID, MemID, BookID, Date, DueDate FROM Borrow WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_LibID, int Original_MemID, int Original_BookID, System.DateTime Original_Date, System.DateTime Original_DueDate) {
+        public virtual int Delete(int Original_Id, int Original_LibID, int Original_MemID, int Original_BookID, System.DateTime Original_Date, System.DateTime Original_DueDate, bool Original_Returned) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_LibID));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_MemID));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_BookID));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Date));
             this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_DueDate));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_Returned));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3908,12 +3942,13 @@ SELECT Id, LibID, MemID, BookID, Date, DueDate FROM Borrow WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int LibID, int MemID, int BookID, System.DateTime Date, System.DateTime DueDate) {
+        public virtual int Insert(int LibID, int MemID, int BookID, System.DateTime Date, System.DateTime DueDate, bool Returned) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(LibID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(MemID));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(BookID));
             this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Date));
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DueDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(Returned));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3934,19 +3969,21 @@ SELECT Id, LibID, MemID, BookID, Date, DueDate FROM Borrow WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int LibID, int MemID, int BookID, System.DateTime Date, System.DateTime DueDate, int Original_Id, int Original_LibID, int Original_MemID, int Original_BookID, System.DateTime Original_Date, System.DateTime Original_DueDate, int Id) {
+        public virtual int Update(int LibID, int MemID, int BookID, System.DateTime Date, System.DateTime DueDate, bool Returned, int Original_Id, int Original_LibID, int Original_MemID, int Original_BookID, System.DateTime Original_Date, System.DateTime Original_DueDate, bool Original_Returned, int Id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(LibID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(MemID));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(BookID));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Date));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DueDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_LibID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_MemID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_BookID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DueDate));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(Returned));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_LibID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_MemID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_BookID));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_DueDate));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Original_Returned));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3967,8 +4004,8 @@ SELECT Id, LibID, MemID, BookID, Date, DueDate FROM Borrow WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int LibID, int MemID, int BookID, System.DateTime Date, System.DateTime DueDate, int Original_Id, int Original_LibID, int Original_MemID, int Original_BookID, System.DateTime Original_Date, System.DateTime Original_DueDate) {
-            return this.Update(LibID, MemID, BookID, Date, DueDate, Original_Id, Original_LibID, Original_MemID, Original_BookID, Original_Date, Original_DueDate, Original_Id);
+        public virtual int Update(int LibID, int MemID, int BookID, System.DateTime Date, System.DateTime DueDate, bool Returned, int Original_Id, int Original_LibID, int Original_MemID, int Original_BookID, System.DateTime Original_Date, System.DateTime Original_DueDate, bool Original_Returned) {
+            return this.Update(LibID, MemID, BookID, Date, DueDate, Returned, Original_Id, Original_LibID, Original_MemID, Original_BookID, Original_Date, Original_DueDate, Original_Returned, Original_Id);
         }
     }
     

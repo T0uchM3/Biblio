@@ -20,19 +20,19 @@ namespace Biblio {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BiblioDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BiblioDataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BiblioDataSet1 : global::System.Data.DataSet {
+    public partial class BiblioDataSet2 : global::System.Data.DataSet {
         
-        private comboDataTable tablecombo;
+        private FINALVIEWDataTable tableFINALVIEW;
         
-        private VisitorCountDataTable tableVisitorCount;
+        private BorrowStatusDataTable tableBorrowStatus;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BiblioDataSet1() {
+        public BiblioDataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace Biblio {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected BiblioDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BiblioDataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,11 +56,11 @@ namespace Biblio {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["combo"] != null)) {
-                    base.Tables.Add(new comboDataTable(ds.Tables["combo"]));
+                if ((ds.Tables["FINALVIEW"] != null)) {
+                    base.Tables.Add(new FINALVIEWDataTable(ds.Tables["FINALVIEW"]));
                 }
-                if ((ds.Tables["VisitorCount"] != null)) {
-                    base.Tables.Add(new VisitorCountDataTable(ds.Tables["VisitorCount"]));
+                if ((ds.Tables["BorrowStatus"] != null)) {
+                    base.Tables.Add(new BorrowStatusDataTable(ds.Tables["BorrowStatus"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +84,9 @@ namespace Biblio {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public comboDataTable combo {
+        public FINALVIEWDataTable FINALVIEW {
             get {
-                return this.tablecombo;
+                return this.tableFINALVIEW;
             }
         }
         
@@ -94,9 +94,9 @@ namespace Biblio {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VisitorCountDataTable VisitorCount {
+        public BorrowStatusDataTable BorrowStatus {
             get {
-                return this.tableVisitorCount;
+                return this.tableBorrowStatus;
             }
         }
         
@@ -142,7 +142,7 @@ namespace Biblio {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BiblioDataSet1 cln = ((BiblioDataSet1)(base.Clone()));
+            BiblioDataSet2 cln = ((BiblioDataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -167,11 +167,11 @@ namespace Biblio {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["combo"] != null)) {
-                    base.Tables.Add(new comboDataTable(ds.Tables["combo"]));
+                if ((ds.Tables["FINALVIEW"] != null)) {
+                    base.Tables.Add(new FINALVIEWDataTable(ds.Tables["FINALVIEW"]));
                 }
-                if ((ds.Tables["VisitorCount"] != null)) {
-                    base.Tables.Add(new VisitorCountDataTable(ds.Tables["VisitorCount"]));
+                if ((ds.Tables["BorrowStatus"] != null)) {
+                    base.Tables.Add(new BorrowStatusDataTable(ds.Tables["BorrowStatus"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +206,16 @@ namespace Biblio {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablecombo = ((comboDataTable)(base.Tables["combo"]));
+            this.tableFINALVIEW = ((FINALVIEWDataTable)(base.Tables["FINALVIEW"]));
             if ((initTable == true)) {
-                if ((this.tablecombo != null)) {
-                    this.tablecombo.InitVars();
+                if ((this.tableFINALVIEW != null)) {
+                    this.tableFINALVIEW.InitVars();
                 }
             }
-            this.tableVisitorCount = ((VisitorCountDataTable)(base.Tables["VisitorCount"]));
+            this.tableBorrowStatus = ((BorrowStatusDataTable)(base.Tables["BorrowStatus"]));
             if ((initTable == true)) {
-                if ((this.tableVisitorCount != null)) {
-                    this.tableVisitorCount.InitVars();
+                if ((this.tableBorrowStatus != null)) {
+                    this.tableBorrowStatus.InitVars();
                 }
             }
         }
@@ -223,26 +223,26 @@ namespace Biblio {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BiblioDataSet1";
+            this.DataSetName = "BiblioDataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BiblioDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/BiblioDataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablecombo = new comboDataTable();
-            base.Tables.Add(this.tablecombo);
-            this.tableVisitorCount = new VisitorCountDataTable();
-            base.Tables.Add(this.tableVisitorCount);
+            this.tableFINALVIEW = new FINALVIEWDataTable();
+            base.Tables.Add(this.tableFINALVIEW);
+            this.tableBorrowStatus = new BorrowStatusDataTable();
+            base.Tables.Add(this.tableBorrowStatus);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializecombo() {
+        private bool ShouldSerializeFINALVIEW() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeVisitorCount() {
+        private bool ShouldSerializeBorrowStatus() {
             return false;
         }
         
@@ -257,7 +257,7 @@ namespace Biblio {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BiblioDataSet1 ds = new BiblioDataSet1();
+            BiblioDataSet2 ds = new BiblioDataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,30 +302,30 @@ namespace Biblio {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void comboRowChangeEventHandler(object sender, comboRowChangeEvent e);
+        public delegate void FINALVIEWRowChangeEventHandler(object sender, FINALVIEWRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void VisitorCountRowChangeEventHandler(object sender, VisitorCountRowChangeEvent e);
+        public delegate void BorrowStatusRowChangeEventHandler(object sender, BorrowStatusRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class comboDataTable : global::System.Data.TypedTableBase<comboRow> {
+        public partial class FINALVIEWDataTable : global::System.Data.TypedTableBase<FINALVIEWRow> {
             
-            private global::System.Data.DataColumn columnDate;
+            private global::System.Data.DataColumn columnB11A21;
             
-            private global::System.Data.DataColumn columnExpr2;
+            private global::System.Data.DataColumn columnB11score;
             
-            private global::System.Data.DataColumn columnVisitDay;
+            private global::System.Data.DataColumn columnB11PER;
             
-            private global::System.Data.DataColumn columnExpr1;
+            private global::System.Data.DataColumn columncol1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public comboDataTable() {
-                this.TableName = "combo";
+            public FINALVIEWDataTable() {
+                this.TableName = "FINALVIEW";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -333,7 +333,7 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal comboDataTable(global::System.Data.DataTable table) {
+            internal FINALVIEWDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -350,40 +350,40 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected comboDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected FINALVIEWDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
+            public global::System.Data.DataColumn B11A21Column {
                 get {
-                    return this.columnDate;
+                    return this.columnB11A21;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expr2Column {
+            public global::System.Data.DataColumn B11scoreColumn {
                 get {
-                    return this.columnExpr2;
+                    return this.columnB11score;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn VisitDayColumn {
+            public global::System.Data.DataColumn B11PERColumn {
                 get {
-                    return this.columnVisitDay;
+                    return this.columnB11PER;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
+            public global::System.Data.DataColumn col1Column {
                 get {
-                    return this.columnExpr1;
+                    return this.columncol1;
                 }
             }
             
@@ -398,48 +398,48 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public comboRow this[int index] {
+            public FINALVIEWRow this[int index] {
                 get {
-                    return ((comboRow)(this.Rows[index]));
+                    return ((FINALVIEWRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event comboRowChangeEventHandler comboRowChanging;
+            public event FINALVIEWRowChangeEventHandler FINALVIEWRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event comboRowChangeEventHandler comboRowChanged;
+            public event FINALVIEWRowChangeEventHandler FINALVIEWRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event comboRowChangeEventHandler comboRowDeleting;
+            public event FINALVIEWRowChangeEventHandler FINALVIEWRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event comboRowChangeEventHandler comboRowDeleted;
+            public event FINALVIEWRowChangeEventHandler FINALVIEWRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddcomboRow(comboRow row) {
+            public void AddFINALVIEWRow(FINALVIEWRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public comboRow AddcomboRow(System.DateTime Date, int Expr2, System.DateTime VisitDay, int Expr1) {
-                comboRow rowcomboRow = ((comboRow)(this.NewRow()));
+            public FINALVIEWRow AddFINALVIEWRow(int B11A21, int B11score, string B11PER, string col1) {
+                FINALVIEWRow rowFINALVIEWRow = ((FINALVIEWRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Date,
-                        Expr2,
-                        VisitDay,
-                        Expr1};
-                rowcomboRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowcomboRow);
-                return rowcomboRow;
+                        B11A21,
+                        B11score,
+                        B11PER,
+                        col1};
+                rowFINALVIEWRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFINALVIEWRow);
+                return rowFINALVIEWRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                comboDataTable cln = ((comboDataTable)(base.Clone()));
+                FINALVIEWDataTable cln = ((FINALVIEWDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -447,57 +447,58 @@ namespace Biblio {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new comboDataTable();
+                return new FINALVIEWDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnDate = base.Columns["Date"];
-                this.columnExpr2 = base.Columns["Expr2"];
-                this.columnVisitDay = base.Columns["VisitDay"];
-                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnB11A21 = base.Columns["B11A21"];
+                this.columnB11score = base.Columns["B11score"];
+                this.columnB11PER = base.Columns["B11PER"];
+                this.columncol1 = base.Columns["col1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
-                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr2);
-                this.columnVisitDay = new global::System.Data.DataColumn("VisitDay", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVisitDay);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
-                this.columnDate.AllowDBNull = false;
-                this.columnVisitDay.AllowDBNull = false;
+                this.columnB11A21 = new global::System.Data.DataColumn("B11A21", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnB11A21);
+                this.columnB11score = new global::System.Data.DataColumn("B11score", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnB11score);
+                this.columnB11PER = new global::System.Data.DataColumn("B11PER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnB11PER);
+                this.columncol1 = new global::System.Data.DataColumn("col1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncol1);
+                this.columnB11PER.MaxLength = 11;
+                this.columncol1.AllowDBNull = false;
+                this.columncol1.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public comboRow NewcomboRow() {
-                return ((comboRow)(this.NewRow()));
+            public FINALVIEWRow NewFINALVIEWRow() {
+                return ((FINALVIEWRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new comboRow(builder);
+                return new FINALVIEWRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(comboRow);
+                return typeof(FINALVIEWRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.comboRowChanged != null)) {
-                    this.comboRowChanged(this, new comboRowChangeEvent(((comboRow)(e.Row)), e.Action));
+                if ((this.FINALVIEWRowChanged != null)) {
+                    this.FINALVIEWRowChanged(this, new FINALVIEWRowChangeEvent(((FINALVIEWRow)(e.Row)), e.Action));
                 }
             }
             
@@ -505,8 +506,8 @@ namespace Biblio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.comboRowChanging != null)) {
-                    this.comboRowChanging(this, new comboRowChangeEvent(((comboRow)(e.Row)), e.Action));
+                if ((this.FINALVIEWRowChanging != null)) {
+                    this.FINALVIEWRowChanging(this, new FINALVIEWRowChangeEvent(((FINALVIEWRow)(e.Row)), e.Action));
                 }
             }
             
@@ -514,8 +515,8 @@ namespace Biblio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.comboRowDeleted != null)) {
-                    this.comboRowDeleted(this, new comboRowChangeEvent(((comboRow)(e.Row)), e.Action));
+                if ((this.FINALVIEWRowDeleted != null)) {
+                    this.FINALVIEWRowDeleted(this, new FINALVIEWRowChangeEvent(((FINALVIEWRow)(e.Row)), e.Action));
                 }
             }
             
@@ -523,14 +524,14 @@ namespace Biblio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.comboRowDeleting != null)) {
-                    this.comboRowDeleting(this, new comboRowChangeEvent(((comboRow)(e.Row)), e.Action));
+                if ((this.FINALVIEWRowDeleting != null)) {
+                    this.FINALVIEWRowDeleting(this, new FINALVIEWRowChangeEvent(((FINALVIEWRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovecomboRow(comboRow row) {
+            public void RemoveFINALVIEWRow(FINALVIEWRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -539,7 +540,7 @@ namespace Biblio {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BiblioDataSet1 ds = new BiblioDataSet1();
+                BiblioDataSet2 ds = new BiblioDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -557,7 +558,7 @@ namespace Biblio {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "comboDataTable";
+                attribute2.FixedValue = "FINALVIEWDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -603,16 +604,30 @@ namespace Biblio {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class VisitorCountDataTable : global::System.Data.TypedTableBase<VisitorCountRow> {
+        public partial class BorrowStatusDataTable : global::System.Data.TypedTableBase<BorrowStatusRow> {
             
-            private global::System.Data.DataColumn columnVisitDay;
+            private global::System.Data.DataColumn columnborrowYesterday;
             
-            private global::System.Data.DataColumn columnExpr1;
+            private global::System.Data.DataColumn columnborrowBeforeYesterday;
+            
+            private global::System.Data.DataColumn columntotalBorrows;
+            
+            private global::System.Data.DataColumn columnvisitisYesterday;
+            
+            private global::System.Data.DataColumn columnvisitisBeforeYesterday;
+            
+            private global::System.Data.DataColumn columntotalVisits;
+            
+            private global::System.Data.DataColumn columntotalOverdue;
+            
+            private global::System.Data.DataColumn columnoverdueYesterday;
+            
+            private global::System.Data.DataColumn columnoverdueBeforeYesterday;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VisitorCountDataTable() {
-                this.TableName = "VisitorCount";
+            public BorrowStatusDataTable() {
+                this.TableName = "BorrowStatus";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -620,7 +635,7 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal VisitorCountDataTable(global::System.Data.DataTable table) {
+            internal BorrowStatusDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -637,24 +652,80 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected VisitorCountDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected BorrowStatusDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn VisitDayColumn {
+            public global::System.Data.DataColumn borrowYesterdayColumn {
                 get {
-                    return this.columnVisitDay;
+                    return this.columnborrowYesterday;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
+            public global::System.Data.DataColumn borrowBeforeYesterdayColumn {
                 get {
-                    return this.columnExpr1;
+                    return this.columnborrowBeforeYesterday;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn totalBorrowsColumn {
+                get {
+                    return this.columntotalBorrows;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn visitisYesterdayColumn {
+                get {
+                    return this.columnvisitisYesterday;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn visitisBeforeYesterdayColumn {
+                get {
+                    return this.columnvisitisBeforeYesterday;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn totalVisitsColumn {
+                get {
+                    return this.columntotalVisits;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn totalOverdueColumn {
+                get {
+                    return this.columntotalOverdue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn overdueYesterdayColumn {
+                get {
+                    return this.columnoverdueYesterday;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn overdueBeforeYesterdayColumn {
+                get {
+                    return this.columnoverdueBeforeYesterday;
                 }
             }
             
@@ -669,46 +740,53 @@ namespace Biblio {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VisitorCountRow this[int index] {
+            public BorrowStatusRow this[int index] {
                 get {
-                    return ((VisitorCountRow)(this.Rows[index]));
+                    return ((BorrowStatusRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VisitorCountRowChangeEventHandler VisitorCountRowChanging;
+            public event BorrowStatusRowChangeEventHandler BorrowStatusRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VisitorCountRowChangeEventHandler VisitorCountRowChanged;
+            public event BorrowStatusRowChangeEventHandler BorrowStatusRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VisitorCountRowChangeEventHandler VisitorCountRowDeleting;
+            public event BorrowStatusRowChangeEventHandler BorrowStatusRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VisitorCountRowChangeEventHandler VisitorCountRowDeleted;
+            public event BorrowStatusRowChangeEventHandler BorrowStatusRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddVisitorCountRow(VisitorCountRow row) {
+            public void AddBorrowStatusRow(BorrowStatusRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VisitorCountRow AddVisitorCountRow(System.DateTime VisitDay, int Expr1) {
-                VisitorCountRow rowVisitorCountRow = ((VisitorCountRow)(this.NewRow()));
+            public BorrowStatusRow AddBorrowStatusRow(int borrowYesterday, int borrowBeforeYesterday, int totalBorrows, int visitisYesterday, int visitisBeforeYesterday, int totalVisits, int totalOverdue, int overdueYesterday, int overdueBeforeYesterday) {
+                BorrowStatusRow rowBorrowStatusRow = ((BorrowStatusRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        VisitDay,
-                        Expr1};
-                rowVisitorCountRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVisitorCountRow);
-                return rowVisitorCountRow;
+                        borrowYesterday,
+                        borrowBeforeYesterday,
+                        totalBorrows,
+                        visitisYesterday,
+                        visitisBeforeYesterday,
+                        totalVisits,
+                        totalOverdue,
+                        overdueYesterday,
+                        overdueBeforeYesterday};
+                rowBorrowStatusRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBorrowStatusRow);
+                return rowBorrowStatusRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                VisitorCountDataTable cln = ((VisitorCountDataTable)(base.Clone()));
+                BorrowStatusDataTable cln = ((BorrowStatusDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -716,50 +794,79 @@ namespace Biblio {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new VisitorCountDataTable();
+                return new BorrowStatusDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnVisitDay = base.Columns["VisitDay"];
-                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnborrowYesterday = base.Columns["borrowYesterday"];
+                this.columnborrowBeforeYesterday = base.Columns["borrowBeforeYesterday"];
+                this.columntotalBorrows = base.Columns["totalBorrows"];
+                this.columnvisitisYesterday = base.Columns["visitisYesterday"];
+                this.columnvisitisBeforeYesterday = base.Columns["visitisBeforeYesterday"];
+                this.columntotalVisits = base.Columns["totalVisits"];
+                this.columntotalOverdue = base.Columns["totalOverdue"];
+                this.columnoverdueYesterday = base.Columns["overdueYesterday"];
+                this.columnoverdueBeforeYesterday = base.Columns["overdueBeforeYesterday"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnVisitDay = new global::System.Data.DataColumn("VisitDay", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVisitDay);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
-                this.columnVisitDay.AllowDBNull = false;
+                this.columnborrowYesterday = new global::System.Data.DataColumn("borrowYesterday", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnborrowYesterday);
+                this.columnborrowBeforeYesterday = new global::System.Data.DataColumn("borrowBeforeYesterday", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnborrowBeforeYesterday);
+                this.columntotalBorrows = new global::System.Data.DataColumn("totalBorrows", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalBorrows);
+                this.columnvisitisYesterday = new global::System.Data.DataColumn("visitisYesterday", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvisitisYesterday);
+                this.columnvisitisBeforeYesterday = new global::System.Data.DataColumn("visitisBeforeYesterday", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvisitisBeforeYesterday);
+                this.columntotalVisits = new global::System.Data.DataColumn("totalVisits", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalVisits);
+                this.columntotalOverdue = new global::System.Data.DataColumn("totalOverdue", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalOverdue);
+                this.columnoverdueYesterday = new global::System.Data.DataColumn("overdueYesterday", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoverdueYesterday);
+                this.columnoverdueBeforeYesterday = new global::System.Data.DataColumn("overdueBeforeYesterday", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoverdueBeforeYesterday);
+                this.columnborrowYesterday.ReadOnly = true;
+                this.columnborrowBeforeYesterday.ReadOnly = true;
+                this.columntotalBorrows.ReadOnly = true;
+                this.columnvisitisYesterday.ReadOnly = true;
+                this.columnvisitisBeforeYesterday.ReadOnly = true;
+                this.columntotalVisits.ReadOnly = true;
+                this.columntotalOverdue.ReadOnly = true;
+                this.columnoverdueYesterday.ReadOnly = true;
+                this.columnoverdueBeforeYesterday.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VisitorCountRow NewVisitorCountRow() {
-                return ((VisitorCountRow)(this.NewRow()));
+            public BorrowStatusRow NewBorrowStatusRow() {
+                return ((BorrowStatusRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new VisitorCountRow(builder);
+                return new BorrowStatusRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(VisitorCountRow);
+                return typeof(BorrowStatusRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.VisitorCountRowChanged != null)) {
-                    this.VisitorCountRowChanged(this, new VisitorCountRowChangeEvent(((VisitorCountRow)(e.Row)), e.Action));
+                if ((this.BorrowStatusRowChanged != null)) {
+                    this.BorrowStatusRowChanged(this, new BorrowStatusRowChangeEvent(((BorrowStatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -767,8 +874,8 @@ namespace Biblio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.VisitorCountRowChanging != null)) {
-                    this.VisitorCountRowChanging(this, new VisitorCountRowChangeEvent(((VisitorCountRow)(e.Row)), e.Action));
+                if ((this.BorrowStatusRowChanging != null)) {
+                    this.BorrowStatusRowChanging(this, new BorrowStatusRowChangeEvent(((BorrowStatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -776,8 +883,8 @@ namespace Biblio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.VisitorCountRowDeleted != null)) {
-                    this.VisitorCountRowDeleted(this, new VisitorCountRowChangeEvent(((VisitorCountRow)(e.Row)), e.Action));
+                if ((this.BorrowStatusRowDeleted != null)) {
+                    this.BorrowStatusRowDeleted(this, new BorrowStatusRowChangeEvent(((BorrowStatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -785,14 +892,14 @@ namespace Biblio {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.VisitorCountRowDeleting != null)) {
-                    this.VisitorCountRowDeleting(this, new VisitorCountRowChangeEvent(((VisitorCountRow)(e.Row)), e.Action));
+                if ((this.BorrowStatusRowDeleting != null)) {
+                    this.BorrowStatusRowDeleting(this, new BorrowStatusRowChangeEvent(((BorrowStatusRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveVisitorCountRow(VisitorCountRow row) {
+            public void RemoveBorrowStatusRow(BorrowStatusRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -801,7 +908,7 @@ namespace Biblio {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BiblioDataSet1 ds = new BiblioDataSet1();
+                BiblioDataSet2 ds = new BiblioDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -819,7 +926,7 @@ namespace Biblio {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "VisitorCountDataTable";
+                attribute2.FixedValue = "BorrowStatusDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -863,147 +970,377 @@ namespace Biblio {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class comboRow : global::System.Data.DataRow {
+        public partial class FINALVIEWRow : global::System.Data.DataRow {
             
-            private comboDataTable tablecombo;
+            private FINALVIEWDataTable tableFINALVIEW;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal comboRow(global::System.Data.DataRowBuilder rb) : 
+            internal FINALVIEWRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablecombo = ((comboDataTable)(this.Table));
+                this.tableFINALVIEW = ((FINALVIEWDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Date {
-                get {
-                    return ((global::System.DateTime)(this[this.tablecombo.DateColumn]));
-                }
-                set {
-                    this[this.tablecombo.DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Expr2 {
+            public int B11A21 {
                 get {
                     try {
-                        return ((int)(this[this.tablecombo.Expr2Column]));
+                        return ((int)(this[this.tableFINALVIEW.B11A21Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Expr2\' in table \'combo\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'B11A21\' in table \'FINALVIEW\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablecombo.Expr2Column] = value;
+                    this[this.tableFINALVIEW.B11A21Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime VisitDay {
-                get {
-                    return ((global::System.DateTime)(this[this.tablecombo.VisitDayColumn]));
-                }
-                set {
-                    this[this.tablecombo.VisitDayColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Expr1 {
+            public int B11score {
                 get {
                     try {
-                        return ((int)(this[this.tablecombo.Expr1Column]));
+                        return ((int)(this[this.tableFINALVIEW.B11scoreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Expr1\' in table \'combo\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'B11score\' in table \'FINALVIEW\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablecombo.Expr1Column] = value;
+                    this[this.tableFINALVIEW.B11scoreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsExpr2Null() {
-                return this.IsNull(this.tablecombo.Expr2Column);
+            public string B11PER {
+                get {
+                    try {
+                        return ((string)(this[this.tableFINALVIEW.B11PERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'B11PER\' in table \'FINALVIEW\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFINALVIEW.B11PERColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetExpr2Null() {
-                this[this.tablecombo.Expr2Column] = global::System.Convert.DBNull;
+            public string col1 {
+                get {
+                    return ((string)(this[this.tableFINALVIEW.col1Column]));
+                }
+                set {
+                    this[this.tableFINALVIEW.col1Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsExpr1Null() {
-                return this.IsNull(this.tablecombo.Expr1Column);
+            public bool IsB11A21Null() {
+                return this.IsNull(this.tableFINALVIEW.B11A21Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetExpr1Null() {
-                this[this.tablecombo.Expr1Column] = global::System.Convert.DBNull;
+            public void SetB11A21Null() {
+                this[this.tableFINALVIEW.B11A21Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsB11scoreNull() {
+                return this.IsNull(this.tableFINALVIEW.B11scoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetB11scoreNull() {
+                this[this.tableFINALVIEW.B11scoreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsB11PERNull() {
+                return this.IsNull(this.tableFINALVIEW.B11PERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetB11PERNull() {
+                this[this.tableFINALVIEW.B11PERColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class VisitorCountRow : global::System.Data.DataRow {
+        public partial class BorrowStatusRow : global::System.Data.DataRow {
             
-            private VisitorCountDataTable tableVisitorCount;
+            private BorrowStatusDataTable tableBorrowStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal VisitorCountRow(global::System.Data.DataRowBuilder rb) : 
+            internal BorrowStatusRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableVisitorCount = ((VisitorCountDataTable)(this.Table));
+                this.tableBorrowStatus = ((BorrowStatusDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime VisitDay {
-                get {
-                    return ((global::System.DateTime)(this[this.tableVisitorCount.VisitDayColumn]));
-                }
-                set {
-                    this[this.tableVisitorCount.VisitDayColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Expr1 {
+            public int borrowYesterday {
                 get {
                     try {
-                        return ((int)(this[this.tableVisitorCount.Expr1Column]));
+                        return ((int)(this[this.tableBorrowStatus.borrowYesterdayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Expr1\' in table \'VisitorCount\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'borrowYesterday\' in table \'BorrowStatus\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVisitorCount.Expr1Column] = value;
+                    this[this.tableBorrowStatus.borrowYesterdayColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsExpr1Null() {
-                return this.IsNull(this.tableVisitorCount.Expr1Column);
+            public int borrowBeforeYesterday {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.borrowBeforeYesterdayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'borrowBeforeYesterday\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.borrowBeforeYesterdayColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetExpr1Null() {
-                this[this.tableVisitorCount.Expr1Column] = global::System.Convert.DBNull;
+            public int totalBorrows {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.totalBorrowsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalBorrows\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.totalBorrowsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int visitisYesterday {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.visitisYesterdayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'visitisYesterday\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.visitisYesterdayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int visitisBeforeYesterday {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.visitisBeforeYesterdayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'visitisBeforeYesterday\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.visitisBeforeYesterdayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int totalVisits {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.totalVisitsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalVisits\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.totalVisitsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int totalOverdue {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.totalOverdueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalOverdue\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.totalOverdueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int overdueYesterday {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.overdueYesterdayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'overdueYesterday\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.overdueYesterdayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int overdueBeforeYesterday {
+                get {
+                    try {
+                        return ((int)(this[this.tableBorrowStatus.overdueBeforeYesterdayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'overdueBeforeYesterday\' in table \'BorrowStatus\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBorrowStatus.overdueBeforeYesterdayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsborrowYesterdayNull() {
+                return this.IsNull(this.tableBorrowStatus.borrowYesterdayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetborrowYesterdayNull() {
+                this[this.tableBorrowStatus.borrowYesterdayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsborrowBeforeYesterdayNull() {
+                return this.IsNull(this.tableBorrowStatus.borrowBeforeYesterdayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetborrowBeforeYesterdayNull() {
+                this[this.tableBorrowStatus.borrowBeforeYesterdayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstotalBorrowsNull() {
+                return this.IsNull(this.tableBorrowStatus.totalBorrowsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettotalBorrowsNull() {
+                this[this.tableBorrowStatus.totalBorrowsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsvisitisYesterdayNull() {
+                return this.IsNull(this.tableBorrowStatus.visitisYesterdayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetvisitisYesterdayNull() {
+                this[this.tableBorrowStatus.visitisYesterdayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsvisitisBeforeYesterdayNull() {
+                return this.IsNull(this.tableBorrowStatus.visitisBeforeYesterdayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetvisitisBeforeYesterdayNull() {
+                this[this.tableBorrowStatus.visitisBeforeYesterdayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstotalVisitsNull() {
+                return this.IsNull(this.tableBorrowStatus.totalVisitsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettotalVisitsNull() {
+                this[this.tableBorrowStatus.totalVisitsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstotalOverdueNull() {
+                return this.IsNull(this.tableBorrowStatus.totalOverdueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettotalOverdueNull() {
+                this[this.tableBorrowStatus.totalOverdueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsoverdueYesterdayNull() {
+                return this.IsNull(this.tableBorrowStatus.overdueYesterdayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetoverdueYesterdayNull() {
+                this[this.tableBorrowStatus.overdueYesterdayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsoverdueBeforeYesterdayNull() {
+                return this.IsNull(this.tableBorrowStatus.overdueBeforeYesterdayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetoverdueBeforeYesterdayNull() {
+                this[this.tableBorrowStatus.overdueBeforeYesterdayColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1011,22 +1348,22 @@ namespace Biblio {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class comboRowChangeEvent : global::System.EventArgs {
+        public class FINALVIEWRowChangeEvent : global::System.EventArgs {
             
-            private comboRow eventRow;
+            private FINALVIEWRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public comboRowChangeEvent(comboRow row, global::System.Data.DataRowAction action) {
+            public FINALVIEWRowChangeEvent(FINALVIEWRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public comboRow Row {
+            public FINALVIEWRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1045,22 +1382,22 @@ namespace Biblio {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class VisitorCountRowChangeEvent : global::System.EventArgs {
+        public class BorrowStatusRowChangeEvent : global::System.EventArgs {
             
-            private VisitorCountRow eventRow;
+            private BorrowStatusRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VisitorCountRowChangeEvent(VisitorCountRow row, global::System.Data.DataRowAction action) {
+            public BorrowStatusRowChangeEvent(BorrowStatusRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VisitorCountRow Row {
+            public BorrowStatusRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1076,7 +1413,7 @@ namespace Biblio {
         }
     }
 }
-namespace Biblio.BiblioDataSet1TableAdapters {
+namespace Biblio.BiblioDataSet2TableAdapters {
     
     
     /// <summary>
@@ -1088,7 +1425,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class comboTableAdapter : global::System.ComponentModel.Component {
+    public partial class FINALVIEWTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1102,7 +1439,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public comboTableAdapter() {
+        public FINALVIEWTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1199,11 +1536,11 @@ namespace Biblio.BiblioDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "combo";
-            tableMapping.ColumnMappings.Add("Date", "Date");
-            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
-            tableMapping.ColumnMappings.Add("VisitDay", "VisitDay");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.DataSetTable = "FINALVIEW";
+            tableMapping.ColumnMappings.Add("B11A21", "B11A21");
+            tableMapping.ColumnMappings.Add("B11score", "B11score");
+            tableMapping.ColumnMappings.Add("B11PER", "B11PER");
+            tableMapping.ColumnMappings.Add("col1", "col1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1220,7 +1557,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Date, Expr2, VisitDay, Expr1 FROM dbo.combo";
+            this._commandCollection[0].CommandText = "SELECT B11A21, B11score, B11PER, col1 FROM FINALVIEW";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1228,7 +1565,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BiblioDataSet1.comboDataTable dataTable) {
+        public virtual int Fill(BiblioDataSet2.FINALVIEWDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1241,9 +1578,9 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BiblioDataSet1.comboDataTable GetData() {
+        public virtual BiblioDataSet2.FINALVIEWDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BiblioDataSet1.comboDataTable dataTable = new BiblioDataSet1.comboDataTable();
+            BiblioDataSet2.FINALVIEWDataTable dataTable = new BiblioDataSet2.FINALVIEWDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1258,7 +1595,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class VisitorCountTableAdapter : global::System.ComponentModel.Component {
+    public partial class BorrowStatusTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1272,7 +1609,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public VisitorCountTableAdapter() {
+        public BorrowStatusTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1369,9 +1706,16 @@ namespace Biblio.BiblioDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "VisitorCount";
-            tableMapping.ColumnMappings.Add("VisitDay", "VisitDay");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.DataSetTable = "BorrowStatus";
+            tableMapping.ColumnMappings.Add("borrowYesterday", "borrowYesterday");
+            tableMapping.ColumnMappings.Add("borrowBeforeYesterday", "borrowBeforeYesterday");
+            tableMapping.ColumnMappings.Add("totalBorrows", "totalBorrows");
+            tableMapping.ColumnMappings.Add("visitisYesterday", "visitisYesterday");
+            tableMapping.ColumnMappings.Add("visitisBeforeYesterday", "visitisBeforeYesterday");
+            tableMapping.ColumnMappings.Add("totalVisits", "totalVisits");
+            tableMapping.ColumnMappings.Add("totalOverdue", "totalOverdue");
+            tableMapping.ColumnMappings.Add("overdueYesterday", "overdueYesterday");
+            tableMapping.ColumnMappings.Add("overdueBeforeYesterday", "overdueBeforeYesterday");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1388,7 +1732,9 @@ namespace Biblio.BiblioDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT VisitDay, Expr1 FROM dbo.VisitorCount";
+            this._commandCollection[0].CommandText = "SELECT borrowYesterday, borrowBeforeYesterday, totalBorrows, visitisYesterday, vi" +
+                "sitisBeforeYesterday, totalVisits, totalOverdue, overdueYesterday, overdueBefore" +
+                "Yesterday FROM dbo.BorrowStatus";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1396,7 +1742,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BiblioDataSet1.VisitorCountDataTable dataTable) {
+        public virtual int Fill(BiblioDataSet2.BorrowStatusDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1409,9 +1755,9 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BiblioDataSet1.VisitorCountDataTable GetData() {
+        public virtual BiblioDataSet2.BorrowStatusDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BiblioDataSet1.VisitorCountDataTable dataTable = new BiblioDataSet1.VisitorCountDataTable();
+            BiblioDataSet2.BorrowStatusDataTable dataTable = new BiblioDataSet2.BorrowStatusDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1485,7 +1831,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(BiblioDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BiblioDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1495,7 +1841,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(BiblioDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BiblioDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1505,7 +1851,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(BiblioDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BiblioDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1539,7 +1885,7 @@ namespace Biblio.BiblioDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(BiblioDataSet1 dataSet) {
+        public virtual int UpdateAll(BiblioDataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
