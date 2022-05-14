@@ -52,7 +52,6 @@ namespace Biblio
             VisitorADO visitADO = new VisitorADO();
             visitADO.insert(visitor);
             visitADO.load();
-            //visitorBindingSource.DataSource = visitADO.visADOList;
             this.visitorTableAdapter.Fill(this.biblioDataSet.Visitor);
         }
 
@@ -113,7 +112,6 @@ namespace Biblio
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("LLIST lENGhr::: " + borrowADOList.Count());
             String id = gridView1.GetFocusedRowCellValue("Id").ToString();
             foreach (Borrow borrow in borrowADOList)
             {
@@ -163,7 +161,6 @@ namespace Biblio
         private void gridView1_FocusedRowObjectChanged(object sender,
             DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
-            //String id = gridView1.GetFocusedRowCellValue("Id").ToString();
             String name = gridView1.GetFocusedRowCellValue("Name").ToString();
             String mail = gridView1.GetFocusedRowCellValue("Mail").ToString();
             String age = gridView1.GetFocusedRowCellValue("Age").ToString();

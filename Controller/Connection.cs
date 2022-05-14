@@ -36,7 +36,6 @@ namespace CONTROLLER
 
         public SqlDataReader SDD2(SqlCommand cmd)
         {
-            //SqlCommand command = new SqlCommand(cmdch);
             cmd.Connection = conn;
             return cmd.ExecuteReader();
         }

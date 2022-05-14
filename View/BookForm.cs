@@ -36,7 +36,6 @@ namespace Biblio
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = "c:\\";
-            //openFileDialog1.Filter = "Database files (*.mdb, *.accdb)|*.mdb;*.accdb";
             openFileDialog1.FilterIndex = 0;
             openFileDialog1.RestoreDirectory = true;
 
@@ -101,7 +100,6 @@ namespace Biblio
             BookADO bookADO = new BookADO();
             bookADO.delete(id);
             bookADO.load(null);
-            //Books_Load(sender, null);
             bookBindingSource.DataSource = bookADO.bookADOList;
         }
 
@@ -111,8 +109,6 @@ namespace Biblio
 
         private void onFocusChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
-            //if (tileView2.GetFocusedRowCellValue("Id") == null)
-            //    return;
             Int32 id = 0;
             String title = null;
             byte[] imageByte = null;
@@ -133,7 +129,6 @@ namespace Biblio
             pictureBox1.Image = (Image)converter.ConvertFrom(imageByte);
             Console.WriteLine(" " + id);
             roundTf1.Text = title;
-            //Books_Load(sender, null);
         }
 
         private void addEvent(object sender, EventArgs e)
@@ -157,7 +152,6 @@ namespace Biblio
             bookADO.insert(book);
             bookADO.load(null);
             bookBindingSource.DataSource = bookADO.bookADOList;
-            //Books_Load(sender, null);
         }
     }
 }

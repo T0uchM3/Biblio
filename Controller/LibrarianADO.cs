@@ -23,20 +23,6 @@ namespace Controller
             Console.WriteLine("INSERTED LIBRARIAN");
         }
 
-        public void update(Librarian client)
-        {
-            //SqlCommand cmd = new SqlCommand("update  client set nom ='" + client.Nom + "' ,  prenom =  '" +
-            //                                client.Prenom + "' , adresse =  '" + client.Adresse + "' , tel =  '" +
-            //                                client.Telephone + "' , code_postale =  '" + client.Code_postal +
-            //                                "' where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
-        }
-
-        public void delete(Librarian client)
-        {
-            //SqlCommand cmd = new SqlCommand("delete from  client  where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
-        }
 
         public void load()
         {

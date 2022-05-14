@@ -49,14 +49,8 @@ namespace Biblio
             counVisitList = bADO.counList;
             bADO.loadCount(1);
             counBorrowList = bADO.counList;
-            //foreach (Count c in bADO.counList)
-            //{
-            //    //Console.WriteLine("date: " + c.date + " count: " + c.count);
-            //}
 
             chart1.Series.Clear();
-            //chart1.Series[0].XValueMember=
-            //Console.WriteLine("aaaaaaaaaaaaaaaaaaaaaaa " + chart1.Series.Count());
 
 
             var series1 = new Series
@@ -138,10 +132,6 @@ namespace Biblio
                 overdueBooksLab.ImageOptions.Image =
                     (Bitmap)Properties.Resources.ResourceManager.GetObject("overdueDown");
             }
-            //if (s.BorrowYesterday == s.BorrowBeforeYesterday)
-            //{
-            //    borrowedBookLab.ImageOptions.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Invalid");
-            //}
         }
 
 
