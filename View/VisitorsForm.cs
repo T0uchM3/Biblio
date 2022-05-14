@@ -52,7 +52,8 @@ namespace Biblio
             VisitorADO visitADO = new VisitorADO();
             visitADO.insert(visitor);
             visitADO.load();
-            visitorBindingSource.DataSource = visitADO.visADOList;
+            //visitorBindingSource.DataSource = visitADO.visADOList;
+            this.visitorTableAdapter.Fill(this.biblioDataSet.Visitor);
         }
 
         private void addMem_Click(object sender, EventArgs e)
@@ -89,25 +90,25 @@ namespace Biblio
         private void gridView2_CustomDrawColumnHeader(object sender,
             DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventArgs e)
         {
-            if (e.Column == null) return;
+            //if (e.Column == null) return;
 
-            e.Column.AppearanceHeader.BackColor = Color.FromArgb(230, 240, 249);
-            if (e.Column.AppearanceHeader.BackColor != Color.Empty)
-            {
-                e.Info.AllowColoring = true;
-            }
+            //e.Column.AppearanceHeader.BackColor = Color.FromArgb(230, 240, 249);
+            //if (e.Column.AppearanceHeader.BackColor != Color.Empty)
+            //{
+            //    e.Info.AllowColoring = true;
+            //}
         }
 
         private void gridView1_CustomDrawColumnHeader(object sender,
             DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventArgs e)
         {
-            if (e.Column == null) return;
+            //if (e.Column == null) return;
 
-            e.Column.AppearanceHeader.BackColor = Color.FromArgb(240, 244, 249);
-            if (e.Column.AppearanceHeader.BackColor != Color.Empty)
-            {
-                e.Info.AllowColoring = true;
-            }
+            //e.Column.AppearanceHeader.BackColor = Color.FromArgb(240, 244, 249);
+            //if (e.Column.AppearanceHeader.BackColor != Color.Empty)
+            //{
+            //    e.Info.AllowColoring = true;
+            //}
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)

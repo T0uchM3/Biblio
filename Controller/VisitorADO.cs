@@ -23,14 +23,6 @@ namespace Controller
             Console.WriteLine("INSERTED Visitor");
         }
 
-        public void update(Visitor visitor)
-        {
-            //SqlCommand cmd = new SqlCommand("update  client set nom ='" + client.Nom + "' ,  prenom =  '" +
-            //                                client.Prenom + "' , adresse =  '" + client.Adresse + "' , tel =  '" +
-            //                                client.Telephone + "' , code_postale =  '" + client.Code_postal +
-            //                                "' where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
-        }
 
         public void delete(String id)
         {

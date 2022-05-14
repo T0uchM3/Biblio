@@ -167,7 +167,7 @@
             this.bookBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bookBtn.Size = new System.Drawing.Size(311, 57);
             this.bookBtn.TabIndex = 6;
-            this.bookBtn.Text = "    Visitors";
+            this.bookBtn.Text = "    Book Library";
             this.bookBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bookBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bookBtn.UseCompatibleTextRendering = true;
@@ -295,7 +295,7 @@
             // sizer
             // 
             this.sizer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sizer.BackColor = System.Drawing.Color.Black;
+            this.sizer.BackColor = System.Drawing.Color.LightGray;
             this.sizer.Location = new System.Drawing.Point(776, 476);
             this.sizer.Name = "sizer";
             this.sizer.Size = new System.Drawing.Size(25, 24);
