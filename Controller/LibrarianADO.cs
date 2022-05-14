@@ -47,7 +47,7 @@ namespace Controller
                 Librarian librarian = new Librarian();
                 librarian.Name = (String)reader.GetValue(1);
                 librarian.Password = (String)reader.GetValue(2);
-
+                librarian.Id = (int)reader.GetValue(0);
                 libADOList.Add(librarian);
             }
 

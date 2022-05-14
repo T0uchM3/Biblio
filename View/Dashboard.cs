@@ -16,11 +16,11 @@ namespace Biblio
 {
     public partial class Dashboard : Form
     {
-        private Main refMain;
+        private Main mainRef;
 
-        public Dashboard(Main refMain)
+        public Dashboard(Main mainRef)
         {
-            this.refMain = refMain;
+            this.mainRef = mainRef;
             InitializeComponent();
         }
 
@@ -143,5 +143,39 @@ namespace Biblio
             //    borrowedBookLab.ImageOptions.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Invalid");
             //}
         }
+
+
+        /// <summary>
+        /// DRAG BEGIN
+        /// </summary>
+        private bool mouseDown;
+
+        private Point lastLocation;
+
+        private void MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                mainRef.Location = new Point(
+                    (mainRef.Location.X - lastLocation.X) + e.X, (mainRef.Location.Y - lastLocation.Y) + e.Y);
+
+                mainRef.Update();
+            }
+        }
+
+        private void MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        /// <summary>
+        /// DRAG END
+        /// </summary>
     }
 }

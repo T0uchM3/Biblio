@@ -37,7 +37,7 @@ namespace Biblio
                     {
                         Console.WriteLine("ENTERRRR");
                         Console.WriteLine("BBBBBBBBb " + Application.OpenForms[0].Name);
-                        (Application.OpenForms[0] as Main).hideDialog();
+                        (Application.OpenForms[0] as Main).hideDialog(lib.Id, lib.Name);
                     }
                 }
             }
@@ -92,5 +92,10 @@ namespace Biblio
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

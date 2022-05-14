@@ -21,39 +21,38 @@ namespace Controller
             Console.WriteLine("INSERTED LIBRARIAN");
 
             using (SqlCommand cmd =
-                   new SqlCommand("insert into Borrow values (@LibID ,@MemID,@BookID,@Date,@DueDate)"))
+                   new SqlCommand("insert into Borrow values (@LibID ,@MemID,@BookID,@Date,@DueDate,@Returned)"))
             {
                 cmd.Parameters.AddWithValue("@LibID", borrow.LibId);
                 cmd.Parameters.AddWithValue("@MemID", borrow.MemId);
                 cmd.Parameters.AddWithValue("@BookID", borrow.BookId);
                 cmd.Parameters.AddWithValue("@Date", borrow.Date);
                 cmd.Parameters.AddWithValue("@DueDate", borrow.DueDate);
+                cmd.Parameters.AddWithValue("@Returned", 0);
                 cnx.executeCommand(cmd);
             }
         }
 
         public void update(Borrow borrow)
         {
-            //SqlCommand cmd = new SqlCommand("update  client set nom ='" + client.Nom + "' ,  prenom =  '" +
-            //                                client.Prenom + "' , adresse =  '" + client.Adresse + "' , tel =  '" +
-            //                                client.Telephone + "' , code_postale =  '" + client.Code_postal +
-            //                                "' where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
+            SqlCommand cmd = new SqlCommand("update Borrow set LibID ='" + borrow.LibId + "' ,  MemID =  '" +
+                                            borrow.MemId + "' , BookID =  '" + borrow.BookId + "' , Date =  '" +
+                                            borrow.Date + "' , DueDate =  '" + borrow.DueDate +
+                                            "' , Returned =  '" + borrow.Returned + "'  where Id  = " + borrow.Id +
+                                            "; ");
+            cnx.executeCommand(cmd);
         }
 
-        public void delete(Borrow borrow)
-        {
-            //SqlCommand cmd = new SqlCommand("delete from  client  where id = " + client.Id + "; ");
-            //cnx.executeCommand(cmd);
-        }
 
         public void load()
         {
+            SqlDataReader reader;
             borrowADOList = new List<Borrow>();
-            SqlDataReader reader = cnx.SDD("SELECT * FROM BORROW");
+            reader = cnx.SDD("SELECT * FROM BORROW");
             while (reader.Read())
             {
                 Borrow borrow = new Borrow();
+                borrow.Id = (int)reader.GetValue(0);
                 borrow.LibId = (int)reader.GetValue(1);
                 borrow.MemId = (int)reader.GetValue(2);
                 borrow.BookId = (int)reader.GetValue(3);

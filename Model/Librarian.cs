@@ -10,6 +10,7 @@ namespace Model
     {
         private String name;
         private string password;
+        private int id;
 
         public string Name
         {
@@ -21,6 +22,12 @@ namespace Model
         {
             get => password;
             set => password = value;
+        }
+
+        public int Id
+        {
+            get => id;
+            set => id = value;
         }
     }
 }

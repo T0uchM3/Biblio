@@ -133,6 +133,26 @@ namespace Biblio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap circle__2_ {
+            get {
+                object obj = ResourceManager.GetObject("circle__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cogwheel {
             get {
                 object obj = ResourceManager.GetObject("cogwheel", resourceCulture);
@@ -516,6 +536,16 @@ namespace Biblio.Properties {
         internal static System.Drawing.Bitmap icons8_shutdown_28px {
             get {
                 object obj = ResourceManager.GetObject("icons8_shutdown_28px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap illustration {
+            get {
+                object obj = ResourceManager.GetObject("illustration", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

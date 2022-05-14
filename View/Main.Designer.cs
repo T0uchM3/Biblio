@@ -30,17 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.sideBar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.nameLab = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dashBtn = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.bookLibBtn = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.borrowBtn = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.bookBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.visitorBtn = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.borrowBtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Button();
             this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
@@ -58,10 +57,9 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.sideBar.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
             this.topLayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).BeginInit();
@@ -75,12 +73,12 @@
             this.sideBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.sideBar.Controls.Add(this.panel1);
+            this.sideBar.Controls.Add(this.nameLab);
+            this.sideBar.Controls.Add(this.panel4);
             this.sideBar.Controls.Add(this.panel2);
-            this.sideBar.Controls.Add(this.panel6);
-            this.sideBar.Controls.Add(this.panel8);
-            this.sideBar.Controls.Add(this.panel9);
+            this.sideBar.Controls.Add(this.panel5);
             this.sideBar.Controls.Add(this.panel3);
+            this.sideBar.Controls.Add(this.panel9);
             this.sideBar.Controls.Add(this.panel7);
             this.sideBar.Location = new System.Drawing.Point(0, 0);
             this.sideBar.MaximumSize = new System.Drawing.Size(200, 0);
@@ -91,17 +89,33 @@
             this.sideBar.MouseEnter += new System.EventHandler(this.sideBarEnter);
             this.sideBar.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
-            // panel1
+            // nameLab
             // 
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 29);
-            this.panel1.TabIndex = 4;
+            this.nameLab.Font = new System.Drawing.Font("Century Schoolbook", 30F);
+            this.nameLab.ForeColor = System.Drawing.Color.White;
+            this.nameLab.Image = global::Biblio.Properties.Resources.circle__2_;
+            this.nameLab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nameLab.Location = new System.Drawing.Point(0, 0);
+            this.nameLab.Margin = new System.Windows.Forms.Padding(0);
+            this.nameLab.Name = "nameLab";
+            this.nameLab.Size = new System.Drawing.Size(216, 70);
+            this.nameLab.TabIndex = 11;
+            this.nameLab.Text = " ";
+            this.nameLab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nameLab.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.nameLab.MouseLeave += new System.EventHandler(this.sideBarLeave2);
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(3, 73);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(197, 10);
+            this.panel4.TabIndex = 12;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dashBtn);
-            this.panel2.Location = new System.Drawing.Point(0, 38);
+            this.panel2.Location = new System.Drawing.Point(0, 89);
             this.panel2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(197, 48);
@@ -130,105 +144,42 @@
             this.dashBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
             this.dashBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
-            // panel6
+            // panel5
             // 
-            this.panel6.Controls.Add(this.bookLibBtn);
-            this.panel6.Location = new System.Drawing.Point(0, 109);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(197, 48);
-            this.panel6.TabIndex = 7;
+            this.panel5.Controls.Add(this.bookBtn);
+            this.panel5.Location = new System.Drawing.Point(0, 160);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(197, 48);
+            this.panel5.TabIndex = 13;
             // 
-            // bookLibBtn
+            // bookBtn
             // 
-            this.bookLibBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.bookLibBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bookLibBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookLibBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bookLibBtn.Image = global::Biblio.Properties.Resources.icons8_book_24px;
-            this.bookLibBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bookLibBtn.Location = new System.Drawing.Point(-13, -3);
-            this.bookLibBtn.Name = "bookLibBtn";
-            this.bookLibBtn.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
-            this.bookLibBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bookLibBtn.Size = new System.Drawing.Size(311, 57);
-            this.bookLibBtn.TabIndex = 6;
-            this.bookLibBtn.Text = "    Book Library";
-            this.bookLibBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bookLibBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bookLibBtn.UseCompatibleTextRendering = true;
-            this.bookLibBtn.UseVisualStyleBackColor = true;
-            this.bookLibBtn.Click += new System.EventHandler(this.bookLibBtn_Click);
-            this.bookLibBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
-            this.bookLibBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button4);
-            this.panel8.Location = new System.Drawing.Point(0, 180);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(197, 48);
-            this.panel8.TabIndex = 7;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Image = global::Biblio.Properties.Resources.calendar__1_;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-13, -3);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
-            this.button4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button4.Size = new System.Drawing.Size(311, 57);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "    Dashboard";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseCompatibleTextRendering = true;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.MouseEnter += new System.EventHandler(this.sideBarEnter);
-            this.button4.MouseLeave += new System.EventHandler(this.sideBarLeave2);
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.borrowBtn);
-            this.panel9.Location = new System.Drawing.Point(0, 251);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(197, 48);
-            this.panel9.TabIndex = 8;
-            // 
-            // borrowBtn
-            // 
-            this.borrowBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.borrowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrowBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.borrowBtn.Image = global::Biblio.Properties.Resources.icons8_return_book_24px;
-            this.borrowBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.borrowBtn.Location = new System.Drawing.Point(-13, -3);
-            this.borrowBtn.Name = "borrowBtn";
-            this.borrowBtn.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
-            this.borrowBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.borrowBtn.Size = new System.Drawing.Size(311, 57);
-            this.borrowBtn.TabIndex = 6;
-            this.borrowBtn.Text = "    Borrowed Books";
-            this.borrowBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.borrowBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.borrowBtn.UseCompatibleTextRendering = true;
-            this.borrowBtn.UseVisualStyleBackColor = true;
-            this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
-            this.borrowBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
-            this.borrowBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
+            this.bookBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.bookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bookBtn.Image = global::Biblio.Properties.Resources.icons8_book_24px;
+            this.bookBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookBtn.Location = new System.Drawing.Point(-12, -3);
+            this.bookBtn.Name = "bookBtn";
+            this.bookBtn.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
+            this.bookBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bookBtn.Size = new System.Drawing.Size(311, 57);
+            this.bookBtn.TabIndex = 6;
+            this.bookBtn.Text = "    Visitors";
+            this.bookBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bookBtn.UseCompatibleTextRendering = true;
+            this.bookBtn.UseVisualStyleBackColor = true;
+            this.bookBtn.Click += new System.EventHandler(this.bookLibBtn_Click);
+            this.bookBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.bookBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.visitorBtn);
-            this.panel3.Location = new System.Drawing.Point(0, 322);
+            this.panel3.Location = new System.Drawing.Point(0, 231);
             this.panel3.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(197, 48);
@@ -257,10 +208,42 @@
             this.visitorBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
             this.visitorBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
             // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.borrowBtn);
+            this.panel9.Location = new System.Drawing.Point(0, 302);
+            this.panel9.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(197, 48);
+            this.panel9.TabIndex = 8;
+            // 
+            // borrowBtn
+            // 
+            this.borrowBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.borrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrowBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.borrowBtn.Image = global::Biblio.Properties.Resources.icons8_return_book_24px;
+            this.borrowBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.borrowBtn.Location = new System.Drawing.Point(-13, -3);
+            this.borrowBtn.Name = "borrowBtn";
+            this.borrowBtn.Padding = new System.Windows.Forms.Padding(30, 0, 5, 0);
+            this.borrowBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.borrowBtn.Size = new System.Drawing.Size(311, 57);
+            this.borrowBtn.TabIndex = 6;
+            this.borrowBtn.Text = "    Borrowed Books";
+            this.borrowBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.borrowBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.borrowBtn.UseCompatibleTextRendering = true;
+            this.borrowBtn.UseVisualStyleBackColor = true;
+            this.borrowBtn.Click += new System.EventHandler(this.borrowBtn_Click);
+            this.borrowBtn.MouseEnter += new System.EventHandler(this.sideBarEnter);
+            this.borrowBtn.MouseLeave += new System.EventHandler(this.sideBarLeave2);
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.exitBtn);
-            this.panel7.Location = new System.Drawing.Point(0, 393);
+            this.panel7.Location = new System.Drawing.Point(0, 373);
             this.panel7.Margin = new System.Windows.Forms.Padding(0, 3, 3, 20);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(197, 48);
@@ -296,7 +279,7 @@
             // 
             // topLayer
             // 
-            this.topLayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.topLayer.BackColor = System.Drawing.Color.White;
             this.topLayer.Controls.Add(this.sizer);
             this.topLayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topLayer.Location = new System.Drawing.Point(0, 0);
@@ -408,12 +391,12 @@
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Main_Shown);
             this.sideBar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.topLayer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.biblioDataSet)).EndInit();
@@ -427,7 +410,6 @@
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel sideBar;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button dashBtn;
         public System.Windows.Forms.Timer sideBarTimer;
@@ -435,12 +417,8 @@
         private System.Windows.Forms.Label sizer;
         private BiblioDataSet biblioDataSet;
         private System.Windows.Forms.BindingSource bookBindingSource;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button bookLibBtn;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button exitBtn;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button borrowBtn;
         private System.Windows.Forms.Panel panel3;
@@ -453,5 +431,9 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private System.Windows.Forms.Label nameLab;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button bookBtn;
     }
 }

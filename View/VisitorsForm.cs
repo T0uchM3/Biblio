@@ -174,5 +174,38 @@ namespace Biblio
             memPhone.Text = phone;
             memPic.CurrentImageIndex = picIndex;
         }
+
+        /// <summary>
+        /// DRAG BEGIN
+        /// </summary>
+        private bool mouseDown;
+
+        private Point lastLocation;
+
+        private void MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                _mainRef.Location = new Point(
+                    (_mainRef.Location.X - lastLocation.X) + e.X, (_mainRef.Location.Y - lastLocation.Y) + e.Y);
+
+                _mainRef.Update();
+            }
+        }
+
+        private void MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        /// <summary>
+        /// DRAG END
+        /// </summary>
     }
 }

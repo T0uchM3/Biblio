@@ -15,13 +15,15 @@ namespace Biblio
     {
         private Form _shadow;
         private Form _msg;
-        private int librarianId = 2;
+        private int librarianId;
         Boolean wasInBook = false;
         Boolean wasInVisit = false;
         Boolean wasInBorrow = false;
         Boolean wasInDashboard = false;
         public bool _sideBarExpanded;
         private DateTime start;
+        private Access access;
+        private String libName;
 
         public Main()
         {
@@ -34,27 +36,29 @@ namespace Biblio
         {
             // TODO: This line of code loads data into the 'biblioDataSet.Visitor' table. You can move, or remove it, as needed.
             this.visitorTableAdapter.Fill(this.biblioDataSet.Visitor);
-            // TODO: This line of code loads data into the 'biblioDataSet.Book' table. You can move, or remove it, as needed.
-            //this.bookTableAdapter.Fill(this.biblioDataSet.Book);
-            //labelControl1.BringToFront();
-            //sizer.BringToFront();
         }
 
-        //protected override void OnShown(EventArgs e)
-        //{
-        //    base.OnShown(e);
-        //    //simpleButton1_Click(null, null);
-        //}
-
-        public void hideDialog()
+        private void Main_Shown(object sender, EventArgs e)
         {
+            access = new Access();
+            dashBtn_Click(sender, e);
+            simpleButton1_Click(sender, e);
+            access.ShowDialog();
+        }
+
+        public void hideDialog(int libId, String libName)
+        {
+            this.librarianId = libId;
+            this.libName = libName;
+            nameLab.Text = " " + libName.Insert(1, "  ");
+            this.access.Close();
             _shadow.Hide();
             this.WindowState = FormWindowState.Maximized;
             this.WindowState = FormWindowState.Normal;
 
-            //this.Focus();
-            //this.Show();
-            //this.BringToFront();
+            this.Focus();
+            this.Show();
+            this.BringToFront();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -170,10 +174,6 @@ namespace Biblio
         );
 
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-        }
-
         private bool mouseDown;
         private Point lastLocation;
 
@@ -233,24 +233,8 @@ namespace Biblio
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
-            //FormCollection fc = Application.OpenForms;
-            //Boolean found = false;
-            //foreach (Form frm in fc)
-            //{
-            //    if (frm.Name == "Books")
-            //    {
-            //        found = true;
-            //    }
-            //}
-
-            //if (found == true)
-            //{
-            //    (Application.OpenForms["Books"] as BookForm).Close();
-            //    this.topLayer.Controls.Remove((Application.OpenForms["Books"] as BookForm));
-            //    //frm.Close();
-            //}
             contentChange();
-            BorrowForm borrow = new BorrowForm(librarianId);
+            BorrowForm borrow = new BorrowForm(librarianId, this);
             borrow.TopLevel = false;
             borrow.AutoScroll = true;
             this.topLayer.Controls.Add(borrow);
