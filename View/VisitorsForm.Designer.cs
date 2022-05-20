@@ -494,7 +494,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.11407F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.885932F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
             this.tableLayoutPanel5.Controls.Add(this.memMail, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.labelControl8, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.memPhone, 2, 1);
@@ -522,7 +522,7 @@
             this.memMail.Properties.AutoHeight = false;
             this.memMail.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.memMail.Properties.NullText = "Maill here...";
-            this.memMail.Size = new System.Drawing.Size(208, 22);
+            this.memMail.Size = new System.Drawing.Size(207, 22);
             this.memMail.TabIndex = 1;
             // 
             // labelControl8
@@ -534,14 +534,14 @@
             this.labelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl8.Location = new System.Drawing.Point(3, 3);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(208, 21);
+            this.labelControl8.Size = new System.Drawing.Size(207, 21);
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "Mail";
             // 
             // memPhone
             // 
             this.memPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memPhone.Location = new System.Drawing.Point(240, 30);
+            this.memPhone.Location = new System.Drawing.Point(239, 30);
             this.memPhone.Name = "memPhone";
             this.memPhone.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.memPhone.Properties.Appearance.Options.UseBackColor = true;
@@ -550,7 +550,7 @@
             this.memPhone.Properties.AutoHeight = false;
             this.memPhone.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.memPhone.Properties.NullText = "Phone number here..";
-            this.memPhone.Size = new System.Drawing.Size(210, 22);
+            this.memPhone.Size = new System.Drawing.Size(211, 22);
             this.memPhone.TabIndex = 6;
             // 
             // labelControl3
@@ -560,9 +560,9 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl3.Location = new System.Drawing.Point(240, 3);
+            this.labelControl3.Location = new System.Drawing.Point(239, 3);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(210, 21);
+            this.labelControl3.Size = new System.Drawing.Size(211, 21);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Phone";
             // 
@@ -573,7 +573,7 @@
             this.labelControl9.Appearance.Options.UseTextOptions = true;
             this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl9.Location = new System.Drawing.Point(217, 3);
+            this.labelControl9.Location = new System.Drawing.Point(216, 3);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(17, 21);
             this.labelControl9.TabIndex = 7;
